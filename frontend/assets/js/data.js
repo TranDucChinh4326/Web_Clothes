@@ -1,69 +1,69 @@
-﻿const products = [
+const products = [
   {
     id: 1,
-    name: "Ão sÆ¡ mi linen cá»• trá»¥",
+    name: "Áo sơ mi linen cổ trụ",
     category: "ao",
-    categoryName: "Ão sÆ¡ mi",
+    categoryName: "Áo sơ mi",
     price: 499000,
     originalPrice: 650000,
     rating: 4.9,
     reviewsCount: 128,
-    tag: "BÃ¡n cháº¡y",
+    tag: "Bán chạy",
     colors: ["#E8DFD8", "#2C3E50", "#FFFFFF"],
     image: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=900&q=80",
-    description: "Ão sÆ¡ mi linen cao cáº¥p dá»‡t tá»« 100% sá»£i lanh tá»± nhiÃªn, thoÃ¡ng mÃ¡t, phom regular fit chuáº©n má»±c tÃ´n dÃ¡ng cho cáº£ mÃ´i trÆ°á»ng cÃ´ng sá»Ÿ láº«n dáº¡o phá»‘ cuá»‘i tuáº§n.",
+    description: "Áo sơ mi linen cao cấp dệt từ 100% sợi lanh tự nhiên, thoáng mát, phom regular fit chuẩn mực tôn dáng cho cả môi trường công sở lẫn dạo phố cuối tuần.",
     features: [
-      "100% sá»£i Linen tá»± nhiÃªn Ä‘Æ°á»£c xá»­ lÃ½ chá»‘ng co rÃºt",
-      "Khuy xÃ  cá»« kháº¯c chÃ¬m logo Clothique tinh táº¿",
-      "ÄÆ°á»ng may cuá»™n chá»‰ Ä‘Ã´i cháº¯c cháº¯n, chá»‘ng sá»n rÃ¡ch",
-      "ThoÃ¡ng khÃ­ gáº¥p 3 láº§n cotton thÃ´ng thÆ°á»ng"
+      "100% sợi Linen tự nhiên được xử lý chống co rút",
+      "Khuy xà cừ khắc chìm logo Clothique tinh tế",
+      "Đường may cuộn chỉ đôi chắc chắn, chống sờn rách",
+      "Thoáng khí gấp 3 lần cotton thông thường"
     ]
   },
   {
     id: 2,
-    name: "Quáº§n tÃ¢y xáº¿p ly dÃ¡ng suÃ´ng",
+    name: "Quần tây xếp ly dáng suông",
     category: "quan",
-    categoryName: "Quáº§n Ã¢u",
+    categoryName: "Quần âu",
     price: 649000,
     originalPrice: 820000,
     rating: 4.8,
     reviewsCount: 94,
-    tag: "Xu hÆ°á»›ng",
+    tag: "Xu hướng",
     colors: ["#1E293B", "#8C7B6B", "#0F172A"],
     image: "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?auto=format&fit=crop&w=900&q=80",
-    description: "Quáº§n tÃ¢y thiáº¿t káº¿ Ä‘Æ°á»ng xáº¿p ly Ä‘Ã´i táº¡o Ä‘á»™ rÅ© tá»± nhiÃªn, cáº¡p cao tÃ´n dÃ¡ng vÃ  cháº¥t váº£i tuÃ½t-si nháº­p kháº©u khÃ´ng nhÄƒn, giá»¯ phom hoÃ n háº£o cáº£ ngÃ y dÃ i.",
+    description: "Quần tây thiết kế đường xếp ly đôi tạo độ rũ tự nhiên, cạp cao tôn dáng và chất vải tuýt-si nhập khẩu không nhăn, giữ phom hoàn hảo cả ngày dài.",
     features: [
-      "Váº£i TuÃ½t-si pha sá»£i co giÃ£n nháº¹ chá»‘ng nhÄƒn tá»‘i Ä‘a",
-      "Cáº¡p phá»‘i tÄƒng Ä‘Æ¡ thÃ´ng minh tinh chá»‰nh 2-4cm",
-      "TÃºi xáº» chÃ©o sÃ¢u tiá»‡n lá»£i vÃ  tÃºi háº­u khuy cÃ i an toÃ n",
-      "DÃ¡ng Relaxed Slim thá»i thÆ°á»£ng phÃ¹ há»£p nhiá»u vÃ³c dÃ¡ng"
+      "Vải Tuýt-si pha sợi co giãn nhẹ chống nhăn tối đa",
+      "Cạp phối tăng đơ thông minh tinh chỉnh 2-4cm",
+      "Túi xẻ chéo sâu tiện lợi và túi hậu khuy cài an toàn",
+      "Dáng Relaxed Slim thời thượng phù hợp nhiều vóc dáng"
     ]
   },
   {
     id: 3,
-    name: "VÃ¡y Ä‘áº§m midi lá»¥a satin",
+    name: "Váy đầm midi lụa satin",
     category: "vay",
-    categoryName: "VÃ¡y thiáº¿t káº¿",
+    categoryName: "Váy thiết kế",
     price: 799000,
     originalPrice: 990000,
     rating: 5.0,
     reviewsCount: 86,
-    tag: "Má»›i vá»",
+    tag: "Mới về",
     colors: ["#C5A880", "#1C1917", "#9E2A2B"],
     image: "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=900&q=80",
-    description: "VÃ¡y midi lá»¥a satin dá»‡t chÃ©o táº¡o hiá»‡u á»©ng Ã¡nh ngá»c trai quyáº¿n rÅ©, thiáº¿t káº¿ cá»• yáº¿m hiá»‡n Ä‘áº¡i káº¿t há»£p Ä‘Æ°á»ng cáº¯t xÃ©o váº¡t tÃ´n Ä‘Æ°á»ng cong thanh lá»‹ch.",
+    description: "Váy midi lụa satin dệt chéo tạo hiệu ứng ánh ngọc trai quyến rũ, thiết kế cổ yếm hiện đại kết hợp đường cắt xéo vạt tôn đường cong thanh lịch.",
     features: [
-      "Lá»¥a Satin dá»‡t sá»£i má»‹n cao cáº¥p, má»m mÆ°á»£t lÆ°á»›t trÃªn da",
-      "Ká»¹ thuáº­t may váº¡t xÃ©o bias-cut Ã´m nháº¹ tá»± nhiÃªn",
-      "KhÃ³a kÃ©o áº©n YKK Ä‘á»“ng mÃ u lÆ°ng vÃ¡y liá»n máº¡ch",
-      "PhÃ¹ há»£p tiá»‡c tá»‘i sang trá»ng láº«n dáº¡ há»™i nháº¹ nhÃ ng"
+      "Lụa Satin dệt sợi mịn cao cấp, mềm mượt lướt trên da",
+      "Kỹ thuật may vạt xéo bias-cut ôm nhẹ tự nhiên",
+      "Khóa kéo ẩn YKK đồng màu lưng váy liền mạch",
+      "Phù hợp tiệc tối sang trọng lẫn dạ hội nhẹ nhàng"
     ]
   },
   {
     id: 4,
-    name: "TÃºi xÃ¡ch da Crossbody cao cáº¥p",
+    name: "Túi xách da Crossbody cao cấp",
     category: "phu-kien",
-    categoryName: "Phá»¥ kiá»‡n da",
+    categoryName: "Phụ kiện da",
     price: 549000,
     originalPrice: 690000,
     rating: 4.9,
@@ -71,79 +71,79 @@
     tag: "Hot deal",
     colors: ["#3D2314", "#0F172A", "#D4A373"],
     image: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=900&q=80",
-    description: "TÃºi xÃ¡ch Ä‘eo chÃ©o cháº¥t liá»‡u da Microfiber háº¡t vÃ¢n má»‹n bá»n bá»‰ gáº¥p 2 láº§n da tháº­t, khÃ³a há»£p kim máº¡ vÃ ng champagne chá»‘ng oxy hÃ³a.",
+    description: "Túi xách đeo chéo chất liệu da Microfiber hạt vân mịn bền bỉ gấp 2 lần da thật, khóa hợp kim mạ vàng champagne chống oxy hóa.",
     features: [
-      "Cháº¥t liá»‡u da Microfiber thÃ¢n thiá»‡n mÃ´i trÆ°á»ng, chá»‘ng tháº¥m nÆ°á»›c",
-      "KhÃ³a nam chÃ¢m hÃ­t cháº¯c cháº¯n máº¡ tÄ©nh Ä‘iá»‡n cao cáº¥p",
-      "DÃ¢y Ä‘eo tÃ¹y chá»‰nh linh hoáº¡t tá»« Ä‘eo vai sang Ä‘eo chÃ©o",
-      "KÃ­ch thÆ°á»›c 22x15x7cm Ä‘á»±ng vá»«a Ä‘iá»‡n thoáº¡i, vÃ­ tiá»n vÃ  má»¹ pháº©m"
+      "Chất liệu da Microfiber thân thiện môi trường, chống thấm nước",
+      "Khóa nam châm hít chắc chắn mạ tĩnh điện cao cấp",
+      "Dây đeo tùy chỉnh linh hoạt từ đeo vai sang đeo chéo",
+      "Kích thước 22x15x7cm đựng vừa điện thoại, ví tiền và mỹ phẩm"
     ]
   },
   {
     id: 5,
-    name: "Ão Blazer Wool Blend hiá»‡n Ä‘áº¡i",
+    name: "Áo Blazer Wool Blend hiện đại",
     category: "ao",
-    categoryName: "Ão khoÃ¡c",
+    categoryName: "Áo khoác",
     price: 1190000,
     originalPrice: 1450000,
     rating: 4.9,
     reviewsCount: 73,
-    tag: "Äáº·c quyá»n",
+    tag: "Đặc quyền",
     colors: ["#334155", "#475569", "#E2E8F0"],
     image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=900&q=80",
-    description: "Ão khoÃ¡c Blazer phom oversize hiá»‡n Ä‘áº¡i phá»‘i ve nhá»n cá»• Ä‘iá»ƒn, cháº¥t liá»‡u len pha má»ng nháº¹ phÃ¹ há»£p thá»i tiáº¿t giao mÃ¹a bá»‘n mÃ¹a trong nÄƒm.",
+    description: "Áo khoác Blazer phom oversize hiện đại phối ve nhọn cổ điển, chất liệu len pha mỏng nhẹ phù hợp thời tiết giao mùa bốn mùa trong năm.",
     features: [
-      "ThÃ nh pháº§n len tá»± nhiÃªn pha sá»£i chá»‘ng xÃ¹ lÃ´ng",
-      "Lá»›p lÃ³t lá»¥a habutai Ãªm Ã¡i thoÃ¡ng khÃ­",
-      "Äá»‡m vai tá»± nhiÃªn má»m máº¡i Ä‘á»‹nh hÃ¬nh phom chuáº©n",
-      "TÃºi má»• hai bÃªn vÃ  tÃºi ngá»±c Ä‘a nÄƒng"
+      "Thành phần len tự nhiên pha sợi chống xù lông",
+      "Lớp lót lụa habutai êm ái thoáng khí",
+      "Đệm vai tự nhiên mềm mại định hình phom chuẩn",
+      "Túi mổ hai bên và túi ngực đa năng"
     ]
   },
   {
     id: 6,
-    name: "Quáº§n Shorts Linen lÆ°ng thun",
+    name: "Quần Shorts Linen lưng thun",
     category: "quan",
-    categoryName: "Quáº§n thá»i trang",
+    categoryName: "Quần thời trang",
     price: 420000,
     originalPrice: 520000,
     rating: 4.7,
     reviewsCount: 65,
-    tag: "Æ¯u Ä‘Ã£i",
+    tag: "Ưu đãi",
     colors: ["#F5F5F0", "#264653", "#E76F51"],
     image: "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?auto=format&fit=crop&w=900&q=80",
-    description: "Quáº§n shorts linen phá»‘i dÃ¢y rÃºt nÄƒng Ä‘á»™ng, phom rá»™ng rÃ£i táº¡o cáº£m giÃ¡c thoáº£i mÃ¡i tá»‘i Ä‘a cho nhá»¯ng chuyáº¿n du lá»‹ch nghá»‰ dÆ°á»¡ng hoáº·c ngÃ y hÃ¨ nÄƒng Ä‘á»™ng.",
+    description: "Quần shorts linen phối dây rút năng động, phom rộng rãi tạo cảm giác thoải mái tối đa cho những chuyến du lịch nghỉ dưỡng hoặc ngày hè năng động.",
     features: [
-      "Váº£i lanh tá»± nhiÃªn giáº·t má»m pre-washed",
-      "LÆ°ng thun co giÃ£n káº¿t há»£p dÃ¢y rÃºt kim loáº¡i bá»n Ä‘áº¹p",
-      "TÃºi sÆ°á»n sÃ¢u tiá»‡n Ã­ch Ä‘á»±ng vá»«a smartphone mÃ n hÃ¬nh lá»›n",
-      "Äá»™ dÃ i vá»«a cháº¡m gá»‘i tráº» trung, thanh lá»‹ch"
+      "Vải lanh tự nhiên giặt mềm pre-washed",
+      "Lưng thun co giãn kết hợp dây rút kim loại bền đẹp",
+      "Túi sườn sâu tiện ích đựng vừa smartphone màn hình lớn",
+      "Độ dài vừa chạm gối trẻ trung, thanh lịch"
     ]
   },
   {
     id: 7,
-    name: "VÃ¡y dá»‡t kim cá»• tim dáº­p gÃ¢n",
+    name: "Váy dệt kim cổ tim dập gân",
     category: "vay",
-    categoryName: "VÃ¡y len dá»‡t",
+    categoryName: "Váy len dệt",
     price: 720000,
     originalPrice: 890000,
     rating: 4.8,
     reviewsCount: 47,
-    tag: "Má»›i vá»",
+    tag: "Mới về",
     colors: ["#2B2D42", "#8D99AE", "#EDF2F4"],
     image: "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&w=900&q=80",
-    description: "VÃ¡y dá»‡t kim rib knit co giÃ£n má»m máº¡i, cá»• tim khoÃ©t sÃ¢u vá»«a pháº£i táº¡o Ä‘iá»ƒm nháº¥n xÆ°Æ¡ng quai xanh quyáº¿n rÅ© cÃ¹ng Ä‘Æ°á»ng xáº» tÃ  sÆ°á»n gá»£i cáº£m.",
+    description: "Váy dệt kim rib knit co giãn mềm mại, cổ tim khoét sâu vừa phải tạo điểm nhấn xương quai xanh quyến rũ cùng đường xẻ tà sườn gợi cảm.",
     features: [
-      "Sá»£i dá»‡t kim Viscose má»m máº¡i, co giÃ£n Ä‘Ã n há»“i 4 chiá»u",
-      "Cáº¥u trÃºc dáº­p gÃ¢n dá»c thá»‹ giÃ¡c giÃºp vÃ³c dÃ¡ng thon gá»n",
-      "Äá»™ giá»¯ nhiá»‡t nháº¹ nhÃ ng, khÃ´ng gÃ¢y kÃ­ch á»©ng da",
-      "ÄÆ°á»ng xáº» tÃ  bÃªn hÃ´ng táº¡o bÆ°á»›c Ä‘i nháº¹ nhÃ ng thanh thoÃ¡t"
+      "Sợi dệt kim Viscose mềm mại, co giãn đàn hồi 4 chiều",
+      "Cấu trúc dập gân dọc thị giác giúp vóc dáng thon gọn",
+      "Độ giữ nhiệt nhẹ nhàng, không gây kích ứng da",
+      "Đường xẻ tà bên hông tạo bước đi nhẹ nhàng thanh thoát"
     ]
   },
   {
     id: 8,
-    name: "KÃ­nh rÃ¢m gá»ng kim loáº¡i Retro",
+    name: "Kính râm gọng kim loại Retro",
     category: "phu-kien",
-    categoryName: "KÃ­nh máº¯t",
+    categoryName: "Kính mắt",
     price: 390000,
     originalPrice: 480000,
     rating: 4.9,
@@ -151,12 +151,12 @@
     tag: "Hot deal",
     colors: ["#E5B25D", "#111111", "#A0AEC0"],
     image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=900&q=80",
-    description: "KÃ­nh rÃ¢m gá»ng há»£p kim titan thanh máº£nh mang phong cÃ¡ch vintage cá»• Ä‘iá»ƒn, trÃ²ng kÃ­nh trÃ¡ng gÆ°Æ¡ng phÃ¢n cá»±c chá»‘ng tia cá»±c tÃ­m UV400 tuyá»‡t Ä‘á»‘i.",
+    description: "Kính râm gọng hợp kim titan thanh mảnh mang phong cách vintage cổ điển, tròng kính tráng gương phân cực chống tia cực tím UV400 tuyệt đối.",
     features: [
-      "TrÃ²ng kÃ­nh Polarized phÃ¢n cá»±c loáº¡i bá» Ã¡nh sÃ¡ng chÃ³i",
-      "Báº£o vá»‡ 100% khá»i tia bá»©c xáº¡ UVA / UVB 400",
-      "Gá»ng há»£p kim siÃªu nháº¹ chá»‰ 22g Ä‘eo cáº£ ngÃ y khÃ´ng háº±n sá»‘ng mÅ©i",
-      "Äi kÃ¨m bao da cao cáº¥p vÃ  khÄƒn lau sá»£i microfiber chuyÃªn dá»¥ng"
+      "Tròng kính Polarized phân cực loại bỏ ánh sáng chói",
+      "Bảo vệ 100% khỏi tia bức xạ UVA / UVB 400",
+      "Gọng hợp kim siêu nhẹ chỉ 22g đeo cả ngày không hằn sống mũi",
+      "Đi kèm bao da cao cấp và khăn lau sợi microfiber chuyên dụng"
     ]
   }
 ];
@@ -167,7 +167,7 @@ const currency = new Intl.NumberFormat("vi-VN", {
 });
 
 function formatPrice(value) {
-  return currency.format(value).replace(/\sâ‚«/, "Ä‘");
+  return currency.format(value).replace(/\s?₫/, "₫");
 }
 
 function getProductById(id) {

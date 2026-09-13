@@ -1,4 +1,4 @@
-﻿const productList = document.querySelector("#product-list");
+const productList = document.querySelector("#product-list");
 const categoryPills = document.querySelectorAll(".filter-pill");
 const searchInput = document.querySelector("#search-input");
 const sortSelect = document.querySelector("#sort-select");
@@ -48,7 +48,7 @@ function renderProductList() {
 
   // Update counter label
   if (productCountLabel) {
-    productCountLabel.textContent = `Hiá»ƒn thá»‹ ${filtered.length} sáº£n pháº©m phÃ¹ há»£p`;
+    productCountLabel.textContent = `Hiển thị ${filtered.length} sản phẩm phù hợp`;
   }
 
   if (filtered.length === 0) {
@@ -64,7 +64,7 @@ function renderProductList() {
       ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)
       : 0;
 
-    const tagClass = product.tag === "BÃ¡n cháº¡y" || product.tag === "Hot deal" ? "tag-hot" : "tag-new";
+    const tagClass = product.tag === "Bán chạy" || product.tag === "Hot deal" ? "tag-hot" : "tag-new";
 
     const colorsHTML = product.colors && product.colors.length
       ? `<div class="color-dots">${product.colors.map(c => `<span class="color-dot" style="background-color: ${c}"></span>`).join("")}</div>`
@@ -73,7 +73,7 @@ function renderProductList() {
     return `
       <article class="product-card">
         <div class="product-thumb-wrap">
-          <span class="product-tag ${tagClass}">${product.tag || "Má»›i"}</span>
+          <span class="product-tag ${tagClass}">${product.tag || "Mới"}</span>
           <a href="product-detail.html?id=${product.id}">
             <img src="${product.image}" alt="${product.name}" loading="lazy" />
           </a>
@@ -83,18 +83,18 @@ function renderProductList() {
               <line x1="3" y1="6" x2="21" y2="6"></line>
               <path d="M16 10a4 4 0 0 1-8 0"></path>
             </svg>
-            ThÃªm nhanh
+            Thêm nhanh
           </button>
         </div>
 
         <div class="product-content">
-          <span class="product-category">${product.categoryName || "Thá»i trang"}</span>
+          <span class="product-category">${product.categoryName || "Thời trang"}</span>
           <a href="product-detail.html?id=${product.id}">
             <h3 class="product-title">${product.name}</h3>
           </a>
 
           <div class="product-rating">
-            <span class="stars">â˜…â˜…â˜…â˜…â˜…</span>
+            <span class="stars">★★★★★</span>
             <span>${product.rating || "5.0"} (${product.reviewsCount || 40})</span>
           </div>
 

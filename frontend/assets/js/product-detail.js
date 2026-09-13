@@ -1,4 +1,4 @@
-﻿const detailContainer = document.querySelector("#product-detail");
+const detailContainer = document.querySelector("#product-detail");
 const relatedContainer = document.querySelector("#related-products");
 const breadcrumbName = document.querySelector("#breadcrumb-product-name");
 
@@ -22,7 +22,7 @@ function renderDetail() {
   const featuresHTML = product.features && product.features.length
     ? `
       <div class="features-list">
-        <h4 style="font-size: 14px; font-weight: 700; margin-bottom: 4px; color: var(--ink);">Äáº·c Ä‘iá»ƒm ná»•i báº­t:</h4>
+        <h4 style="font-size: 14px; font-weight: 700; margin-bottom: 4px; color: var(--ink);">Đặc điểm nổi bật:</h4>
         ${product.features.map(f => `
           <div class="feature-item">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -39,7 +39,7 @@ function renderDetail() {
     ? `
       <div class="selector-group">
         <div class="selector-label">
-          <span>MÃ u sáº¯c</span>
+          <span>Màu sắc:</span>
         </div>
         <div class="color-dots" style="margin-top: 2px;">
           ${product.colors.map((c, i) => `
@@ -62,20 +62,20 @@ function renderDetail() {
       <!-- Right: Details -->
       <div class="detail-info">
         <div class="detail-header">
-          <span class="product-tag tag-new">${product.tag || "Bá»™ sÆ°u táº­p má»›i"}</span>
-          <p class="product-category">${product.categoryName || "Thá»i trang thiáº¿t káº¿"}</p>
+          <span class="product-tag tag-new">${product.tag || "Bộ sưu tập mới"}</span>
+          <p class="product-category">${product.categoryName || "Thời trang thiết kế"}</p>
           <h1>${product.name}</h1>
           <div class="product-rating">
-            <span class="stars">â˜…â˜…â˜…â˜…â˜…</span>
+            <span class="stars">★★★★★</span>
             <span style="font-weight: 600; color: var(--ink);">${product.rating || "5.0"}</span>
-            <span>(${product.reviewsCount || 100}+ Ä‘Ã¡nh giÃ¡ tá»« khÃ¡ch hÃ ng)</span>
+            <span>(${product.reviewsCount || 100}+ đánh giá từ khách hàng)</span>
           </div>
         </div>
 
         <div class="detail-price-box">
           <span class="price">${formatPrice(product.price)}</span>
           ${product.originalPrice ? `<span class="original-price">${formatPrice(product.originalPrice)}</span>` : ""}
-          ${discountPercent > 0 ? `<span class="discount-badge">Tiáº¿t kiá»‡m ${discountPercent}%</span>` : ""}
+          ${discountPercent > 0 ? `<span class="discount-badge">Tiết kiệm ${discountPercent}%</span>` : ""}
         </div>
 
         <p class="detail-desc">${product.description}</p>
@@ -85,8 +85,8 @@ function renderDetail() {
         <!-- Size Selector -->
         <div class="selector-group">
           <div class="selector-label">
-            <span>KÃ­ch cá»¡:</span>
-            <a href="#" style="color: var(--muted); font-size: 13px; text-decoration: underline;">Báº£ng hÆ°á»›ng dáº«n chá»n size</a>
+            <span>Kích cỡ:</span>
+            <a href="#" style="color: var(--muted); font-size: 13px; text-decoration: underline;">Bảng hướng dẫn chọn size</a>
           </div>
           <div class="size-options" id="size-options">
             <button type="button" class="size-pill" data-size="S">S</button>
@@ -99,10 +99,10 @@ function renderDetail() {
         <!-- Quantity Stepper -->
         <div class="selector-group">
           <div class="selector-label">
-            <span>Sá»‘ lÆ°á»£ng:</span>
+            <span>Số lượng:</span>
           </div>
           <div class="quantity-stepper">
-            <button type="button" id="btn-qty-minus">âˆ’</button>
+            <button type="button" id="btn-qty-minus">−</button>
             <span id="display-qty">1</span>
             <button type="button" id="btn-qty-plus">+</button>
           </div>
@@ -116,7 +116,7 @@ function renderDetail() {
               <line x1="3" y1="6" x2="21" y2="6"></line>
               <path d="M16 10a4 4 0 0 1-8 0"></path>
             </svg>
-            ThÃªm vÃ o giá» hÃ ng
+            Thêm vào giỏ hàng
           </button>
           <button class="btn primary lg" id="btn-buy-now" type="button">
             Mua ngay
@@ -129,16 +129,16 @@ function renderDetail() {
         <!-- Service Trust Badges -->
         <div style="border-top: 1px solid var(--line); padding-top: 20px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; text-align: center;">
           <div style="padding: 12px; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius-sm);">
-            <p style="font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 2px;">Miá»…n phÃ­ ship</p>
-            <span style="font-size: 12px; color: var(--muted);">ÄÆ¡n tá»« 500.000Ä‘</span>
+            <p style="font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 2px;">Miễn phí ship</p>
+            <span style="font-size: 12px; color: var(--muted);">Đơn từ 500.000₫</span>
           </div>
           <div style="padding: 12px; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius-sm);">
-            <p style="font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 2px;">Äá»•i tráº£ 30 ngÃ y</p>
-            <span style="font-size: 12px; color: var(--muted);">Táº­n nhÃ  miá»…n phÃ­</span>
+            <p style="font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 2px;">Đổi trả 30 ngày</p>
+            <span style="font-size: 12px; color: var(--muted);">Tận nhà miễn phí</span>
           </div>
           <div style="padding: 12px; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius-sm);">
-            <p style="font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 2px;">Äá»“ng kiá»ƒm tra</p>
-            <span style="font-size: 12px; color: var(--muted);">Æ¯ng Ã½ má»›i nháº­n</span>
+            <p style="font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 2px;">Đồng kiểm tra</p>
+            <span style="font-size: 12px; color: var(--muted);">Ưng ý mới nhận</span>
           </div>
         </div>
       </div>
@@ -196,7 +196,7 @@ function renderRelatedProducts() {
     return `
       <article class="product-card">
         <div class="product-thumb-wrap">
-          <span class="product-tag tag-new">${item.tag || "Gá»£i Ã½"}</span>
+          <span class="product-tag tag-new">${item.tag || "Gợi ý"}</span>
           <a href="product-detail.html?id=${item.id}">
             <img src="${item.image}" alt="${item.name}" loading="lazy" />
           </a>
@@ -206,18 +206,18 @@ function renderRelatedProducts() {
               <line x1="3" y1="6" x2="21" y2="6"></line>
               <path d="M16 10a4 4 0 0 1-8 0"></path>
             </svg>
-            ThÃªm nhanh
+            Thêm nhanh
           </button>
         </div>
 
         <div class="product-content">
-          <span class="product-category">${item.categoryName || "Thá»i trang"}</span>
+          <span class="product-category">${item.categoryName || "Thời trang"}</span>
           <a href="product-detail.html?id=${item.id}">
             <h3 class="product-title">${item.name}</h3>
           </a>
 
           <div class="product-rating">
-            <span class="stars">â˜…â˜…â˜…â˜…â˜…</span>
+            <span class="stars">★★★★★</span>
             <span>${item.rating || "5.0"}</span>
           </div>
 

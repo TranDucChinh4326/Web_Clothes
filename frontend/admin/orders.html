@@ -1,9 +1,12 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quáº£n lÃ½ Ä‘Æ¡n Ä‘áº·t hÃ ng | Clothique Admin</title>
+    <title>Quản lý đơn đặt hàng | Clothique Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../assets/css/styles.css" />
   </head>
   <body>
@@ -14,16 +17,16 @@
       </div>
 
       <nav class="main-nav">
-        <a class="nav-link" href="dashboard.html">Tá»•ng quan</a>
-        <a class="nav-link" href="products.html">Sáº£n pháº©m</a>
-        <a class="nav-link active" href="orders.html">ÄÆ¡n hÃ ng</a>
-        <a class="nav-link" href="../index.html" target="_blank" style="color: var(--accent-dark);">Xem Cá»­a hÃ ng â†—</a>
+        <a class="nav-link" href="dashboard.html">Tổng quan</a>
+        <a class="nav-link" href="products.html">Sản phẩm</a>
+        <a class="nav-link active" href="orders.html">Đơn hàng</a>
+        <a class="nav-link" href="../index.html" target="_blank" style="color: var(--accent-dark);">Xem Cửa hàng ↗</a>
       </nav>
 
       <div class="header-actions">
         <div style="display: flex; align-items: center; gap: 10px;">
           <div style="width: 36px; height: 36px; border-radius: 50%; background: var(--ink); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px;">AD</div>
-          <span style="font-size: 14px; font-weight: 600;">Quáº£n trá»‹ viÃªn</span>
+          <span style="font-size: 14px; font-weight: 600;">Quản trị viên</span>
         </div>
       </div>
     </header>
@@ -31,8 +34,8 @@
     <main class="section">
       <div class="section-header">
         <div class="section-title-wrap">
-          <h1 style="font-family: var(--font-serif); font-size: 2.2rem; font-weight: 600;">Danh sÃ¡ch Ä‘Æ¡n Ä‘áº·t hÃ ng</h1>
-          <p class="section-subtitle">Kiá»ƒm duyá»‡t, Ä‘Ã³ng gÃ³i vÃ  theo dÃµi lá»™ trÃ¬nh giao hÃ ng toÃ n quá»‘c</p>
+          <h1 style="font-family: var(--font-serif); font-size: 2.2rem; font-weight: 600;">Danh sách đơn đặt hàng</h1>
+          <p class="section-subtitle">Kiểm duyệt, đóng gói và theo dõi lộ trình giao hàng toàn quốc</p>
         </div>
       </div>
 
@@ -40,53 +43,53 @@
         <table class="data-table">
           <thead>
             <tr>
-              <th>MÃ£ Ä‘Æ¡n</th>
-              <th>KhÃ¡ch hÃ ng</th>
-              <th>Äá»‹a chá»‰ giao hÃ ng</th>
-              <th>Chi tiáº¿t sáº£n pháº©m</th>
-              <th>Tá»•ng tiá»n</th>
-              <th>Thanh toÃ¡n</th>
-              <th>Tráº¡ng thÃ¡i</th>
-              <th>Thao tÃ¡c</th>
+              <th>Mã đơn</th>
+              <th>Khách hàng</th>
+              <th>Địa chỉ giao hàng</th>
+              <th>Chi tiết sản phẩm</th>
+              <th>Tổng tiền</th>
+              <th>Thanh toán</th>
+              <th>Trạng thái</th>
+              <th>Thao tác</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td><strong>#CL2026091301</strong><br><span style="font-size: 12px; color: var(--muted);">13/09 14:20</span></td>
-              <td>Nguyá»…n Minh Anh<br><span style="font-size: 12px; color: var(--muted);">0908 123 456</span></td>
-              <td>128 Nguyá»…n Huá»‡, Quáº­n 1, TP. HCM</td>
-              <td>Ão sÆ¡ mi linen cá»• trá»¥ (Size M) Ã— 1<br>VÃ¡y lá»¥a satin (Size M) Ã— 1</td>
-              <td><strong style="color: var(--ink);">1.248.000Ä‘</strong></td>
+              <td>Nguyễn Minh Anh<br><span style="font-size: 12px; color: var(--muted);">0908 123 456</span></td>
+              <td>128 Nguyễn Huệ, Quận 1, TP. HCM</td>
+              <td>Áo sơ mi linen cổ trụ (Size M) × 1<br>Váy lụa satin (Size M) × 1</td>
+              <td><strong style="color: var(--ink);">1.248.000₫</strong></td>
               <td><span style="font-size: 12px; background: #f1f5f9; padding: 2px 8px; border-radius: 4px;">COD</span></td>
-              <td><span class="badge badge-warning">Äang xá»­ lÃ½</span></td>
+              <td><span class="badge badge-warning">Đang xử lý</span></td>
               <td>
-                <button class="btn primary" style="min-height: 32px; padding: 0 12px; font-size: 12px;">Duyá»‡t Ä‘Æ¡n</button>
+                <button class="btn primary" style="min-height: 32px; padding: 0 12px; font-size: 12px;">Duyệt đơn</button>
               </td>
             </tr>
 
             <tr>
               <td><strong>#CL2026091302</strong><br><span style="font-size: 12px; color: var(--muted);">13/09 11:05</span></td>
-              <td>Tráº§n HoÃ ng Nam<br><span style="font-size: 12px; color: var(--muted);">0912 345 678</span></td>
-              <td>45 LÃª Duáº©n, Ba ÄÃ¬nh, HÃ  Ná»™i</td>
-              <td>Quáº§n tÃ¢y xáº¿p ly dÃ¡ng suÃ´ng (Size L) Ã— 1</td>
-              <td><strong style="color: var(--ink);">649.000Ä‘</strong></td>
+              <td>Trần Hoàng Nam<br><span style="font-size: 12px; color: var(--muted);">0912 345 678</span></td>
+              <td>45 Lê Duẩn, Ba Đình, Hà Nội</td>
+              <td>Quần tây xếp ly dáng suông (Size L) × 1</td>
+              <td><strong style="color: var(--ink);">649.000₫</strong></td>
               <td><span style="font-size: 12px; background: #f1f5f9; padding: 2px 8px; border-radius: 4px;">VietQR</span></td>
-              <td><span class="badge badge-success">ÄÃ£ giao hÃ ng</span></td>
+              <td><span class="badge badge-success">Đã giao hàng</span></td>
               <td>
-                <button class="btn" style="min-height: 32px; padding: 0 12px; font-size: 12px;">Xem chi tiáº¿t</button>
+                <button class="btn" style="min-height: 32px; padding: 0 12px; font-size: 12px;">Xem chi tiết</button>
               </td>
             </tr>
 
             <tr>
               <td><strong>#CL2026091288</strong><br><span style="font-size: 12px; color: var(--muted);">12/09 18:45</span></td>
-              <td>VÅ© Kiá»u Oanh<br><span style="font-size: 12px; color: var(--muted);">0987 654 321</span></td>
-              <td>72 Tráº§n PhÃº, Háº£i ChÃ¢u, ÄÃ  Náºµng</td>
-              <td>TÃºi xÃ¡ch da Crossbody cao cáº¥p Ã— 1</td>
-              <td><strong style="color: var(--ink);">549.000Ä‘</strong></td>
+              <td>Vũ Kiều Oanh<br><span style="font-size: 12px; color: var(--muted);">0987 654 321</span></td>
+              <td>72 Trần Phú, Hải Châu, Đà Nẵng</td>
+              <td>Túi xách da Crossbody cao cấp × 1</td>
+              <td><strong style="color: var(--ink);">549.000₫</strong></td>
               <td><span style="font-size: 12px; background: #f1f5f9; padding: 2px 8px; border-radius: 4px;">MoMo</span></td>
-              <td><span class="badge badge-success">ÄÃ£ giao hÃ ng</span></td>
+              <td><span class="badge badge-success">Đã giao hàng</span></td>
               <td>
-                <button class="btn" style="min-height: 32px; padding: 0 12px; font-size: 12px;">Xem chi tiáº¿t</button>
+                <button class="btn" style="min-height: 32px; padding: 0 12px; font-size: 12px;">Xem chi tiết</button>
               </td>
             </tr>
           </tbody>

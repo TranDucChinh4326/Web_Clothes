@@ -1,4 +1,4 @@
-﻿const cartContainer = document.querySelector("#cart-items");
+const cartContainer = document.querySelector("#cart-items");
 const subtotalContainer = document.querySelector("#cart-subtotal");
 const shippingContainer = document.querySelector("#cart-shipping");
 const totalContainer = document.querySelector("#cart-total");
@@ -25,9 +25,9 @@ function renderCart() {
           <line x1="3" y1="6" x2="21" y2="6"></line>
           <path d="M16 10a4 4 0 0 1-8 0"></path>
         </svg>
-        <h3 style="font-size: 18px; margin-bottom: 8px;">Giá» hÃ ng cá»§a báº¡n Ä‘ang trá»‘ng</h3>
-        <p style="color: var(--muted); font-size: 14px; margin-bottom: 24px;">HÃ£y khÃ¡m phÃ¡ cÃ¡c thiáº¿t káº¿ má»›i nháº¥t cá»§a Clothique Ä‘á»ƒ chá»n trang phá»¥c Æ°ng Ã½ nhÃ©.</p>
-        <a class="btn primary" href="products.html">KhÃ¡m phÃ¡ sáº£n pháº©m</a>
+        <h3 style="font-size: 18px; margin-bottom: 8px;">Giỏ hàng của bạn đang trống</h3>
+        <p style="color: var(--muted); font-size: 14px; margin-bottom: 24px;">Hãy khám phá các thiết kế mới nhất của Clothique để chọn trang phục ưng ý nhé.</p>
+        <a class="btn primary" href="products.html">Khám phá sản phẩm</a>
       </div>
     `;
 
@@ -35,7 +35,7 @@ function renderCart() {
     if (shippingContainer) shippingContainer.textContent = formatPrice(0);
     if (totalContainer) totalContainer.textContent = formatPrice(0);
     if (shippingProgressFill) shippingProgressFill.style.width = "0%";
-    if (shippingProgressText) shippingProgressText.textContent = "Mua thÃªm Ä‘á»ƒ nháº­n Æ°u Ä‘Ã£i giao hÃ ng miá»…n phÃ­";
+    if (shippingProgressText) shippingProgressText.textContent = "Mua thêm để nhận ưu đãi giao hàng miễn phí";
     if (btnCheckout) {
       btnCheckout.classList.add("disabled");
       btnCheckout.style.pointerEvents = "none";
@@ -53,7 +53,7 @@ function renderCart() {
   cartContainer.innerHTML = cartItems.map((item) => {
     const product = getProductById(item.productId) || {
       id: item.productId,
-      name: "Sáº£n pháº©m",
+      name: "Sản phẩm",
       price: 0,
       image: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=300&q=80"
     };
@@ -71,10 +71,10 @@ function renderCart() {
 
         <div class="cart-item-info">
           <h4><a href="product-detail.html?id=${product.id}">${product.name}</a></h4>
-          <p class="cart-item-meta">Size: <strong style="color: var(--ink);">${item.size}</strong> â€¢ ÄÆ¡n giÃ¡: ${formatPrice(product.price)}</p>
+          <p class="cart-item-meta">Size: <strong style="color: var(--ink);">${item.size}</strong> • Đơn giá: ${formatPrice(product.price)}</p>
           <div class="cart-item-stepper">
             <div class="quantity-stepper">
-              <button type="button" data-delta="-1" data-id="${item.productId}" data-size="${item.size}">âˆ’</button>
+              <button type="button" data-delta="-1" data-id="${item.productId}" data-size="${item.size}">−</button>
               <span>${item.quantity}</span>
               <button type="button" data-delta="1" data-id="${item.productId}" data-size="${item.size}">+</button>
             </div>
@@ -88,7 +88,7 @@ function renderCart() {
               <polyline points="3 6 5 6 21 6"></polyline>
               <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
             </svg>
-            XÃ³a
+            Xóa
           </button>
         </div>
       </div>
@@ -105,10 +105,10 @@ function renderCart() {
 
   if (shippingProgressText) {
     if (isFreeShip) {
-      shippingProgressText.innerHTML = `ðŸŽ‰ Tuyá»‡t vá»i! Báº¡n Ä‘Ã£ Ä‘á»§ Ä‘iá»u kiá»‡n nháº­n <strong>Miá»…n phÃ­ váº­n chuyá»ƒn</strong>!`;
+      shippingProgressText.innerHTML = `🎉 Tuyệt vời! Bạn đã đủ điều kiện nhận <strong>Miễn phí vận chuyển</strong>!`;
     } else {
       const remaining = 500000 - subtotal;
-      shippingProgressText.innerHTML = `Mua thÃªm <strong>${formatPrice(remaining)}</strong> Ä‘á»ƒ Ä‘Æ°á»£c <strong>Miá»…n phÃ­ váº­n chuyá»ƒn toÃ n quá»‘c</strong>!`;
+      shippingProgressText.innerHTML = `Mua thêm <strong>${formatPrice(remaining)}</strong> để được <strong>Miễn phí vận chuyển toàn quốc</strong>!`;
     }
   }
 
@@ -126,7 +126,7 @@ function renderCart() {
   const finalTotal = subtotal - discountAmount + shippingFee;
 
   if (subtotalContainer) subtotalContainer.textContent = formatPrice(subtotal);
-  if (shippingContainer) shippingContainer.textContent = isFreeShip ? "Miá»…n phÃ­" : formatPrice(shippingFee);
+  if (shippingContainer) shippingContainer.textContent = isFreeShip ? "Miễn phí" : formatPrice(shippingFee);
   if (totalContainer) totalContainer.textContent = formatPrice(finalTotal);
 }
 
@@ -159,7 +159,7 @@ if (cartContainer) {
 // Clear cart
 if (btnClearCart) {
   btnClearCart.addEventListener("click", () => {
-    if (confirm("Báº¡n cÃ³ cháº¯c cháº¯n muá»‘n lÃ m trá»‘ng giá» hÃ ng?")) {
+    if (confirm("Bạn có chắc chắn muốn làm trống giỏ hàng?")) {
       clearCart();
       renderCart();
     }
@@ -172,12 +172,12 @@ if (btnApplyPromo && promoInput) {
     const code = promoInput.value.trim().toUpperCase();
     if (code === "CLOTHIQUE10") {
       discountRatio = 0.1;
-      showToast("Ãp dá»¥ng mÃ£ Æ°u Ä‘Ã£i CLOTHIQUE10 thÃ nh cÃ´ng (-10%)!", "success");
+      showToast("Áp dụng mã ưu đãi CLOTHIQUE10 thành công (-10%)!", "success");
       renderCart();
     } else if (code === "") {
-      showToast("Vui lÃ²ng nháº­p mÃ£ giáº£m giÃ¡", "info");
+      showToast("Vui lòng nhập mã giảm giá", "info");
     } else {
-      showToast("MÃ£ giáº£m giÃ¡ khÃ´ng há»£p lá»‡ hoáº·c Ä‘Ã£ háº¿t háº¡n", "error");
+      showToast("Mã giảm giá không hợp lệ hoặc đã hết hạn", "error");
     }
   });
 }

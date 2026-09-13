@@ -1,4 +1,4 @@
-﻿const CART_KEY = "clothique_cart";
+const CART_KEY = "clothique_cart";
 
 function readCart() {
   try {
@@ -26,8 +26,8 @@ function addToCart(productId, size = "M", quantity = 1) {
   updateCartCount();
 
   const product = typeof getProductById === "function" ? getProductById(productId) : null;
-  const productName = product ? product.name : "Sáº£n pháº©m";
-  showToast(`ÄÃ£ thÃªm "${productName}" (Size ${size}) vÃ o giá» hÃ ng!`, "success");
+  const productName = product ? product.name : "Sản phẩm";
+  showToast(`Đã thêm "${productName}" (Size ${size}) vào giỏ hàng!`, "success");
 }
 
 function updateCartItemQuantity(productId, size, delta) {
@@ -38,7 +38,7 @@ function updateCartItemQuantity(productId, size, delta) {
     cartItems[itemIndex].quantity += delta;
     if (cartItems[itemIndex].quantity <= 0) {
       cartItems.splice(itemIndex, 1);
-      showToast("ÄÃ£ xÃ³a sáº£n pháº©m khá»i giá» hÃ ng", "info");
+      showToast("Đã xóa sản phẩm khỏi giỏ hàng", "info");
     }
     saveCart(cartItems);
     updateCartCount();
@@ -49,7 +49,7 @@ function removeFromCart(productId, size) {
   const nextItems = readCart().filter((item) => item.productId !== productId || item.size !== size);
   saveCart(nextItems);
   updateCartCount();
-  showToast("ÄÃ£ xÃ³a sáº£n pháº©m khá»i giá» hÃ ng", "info");
+  showToast("Đã xóa sản phẩm khỏi giỏ hàng", "info");
 }
 
 function clearCart() {
