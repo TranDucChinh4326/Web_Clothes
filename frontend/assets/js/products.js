@@ -59,7 +59,7 @@ function renderProductList() {
 
   if (emptyState) emptyState.style.display = "none";
 
-  productList.innerHTML = filtered.map((product) => {
+  productList.innerHTML = filtered.map((product, idx) => {
     const discountPercent = product.originalPrice
       ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)
       : 0;
@@ -70,21 +70,32 @@ function renderProductList() {
       ? `<div class="color-dots">${product.colors.map(c => `<span class="color-dot" style="background-color: ${c}"></span>`).join("")}</div>`
       : "";
 
+    const delay = (idx % 4) + 1;
+
     return `
-      <article class="product-card">
+      <article class="product-card" data-reveal data-reveal-delay="${delay}">
         <div class="product-thumb-wrap">
           <span class="product-tag ${tagClass}">${product.tag || "Mới"}</span>
           <a href="product-detail.html?id=${product.id}">
             <img src="${product.image}" alt="${product.name}" loading="lazy" />
           </a>
-          <button class="quick-add-btn" type="button" data-quick-add="${product.id}">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-              <line x1="3" y1="6" x2="21" y2="6"></line>
-              <path d="M16 10a4 4 0 0 1-8 0"></path>
-            </svg>
-            Thêm nhanh
-          </button>
+          <div class="card-actions-wrap">
+            <button class="card-action-btn quick-view" type="button" data-quick-view="${product.id}" title="Xem nhanh">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+              Xem nhanh
+            </button>
+            <button class="card-action-btn quick-add" type="button" data-quick-add="${product.id}" title="Thêm vào giỏ">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <path d="M16 10a4 4 0 0 1-8 0"></path>
+              </svg>
+              + Giỏ hàng
+            </button>
+          </div>
         </div>
 
         <div class="product-content">
@@ -109,6 +120,10 @@ function renderProductList() {
       </article>
     `;
   }).join("");
+
+  // Trigger reveal
+  const cards = productList.querySelectorAll("[data-reveal]");
+  cards.forEach(card => card.classList.add("revealed"));
 }
 
 // Category filter
@@ -150,7 +165,7 @@ if (resetFilterBtn) {
   });
 }
 
-// Quick add to cart
+// Quick add and quick view delegation
 if (productList) {
   productList.addEventListener("click", (event) => {
     const quickAddBtn = event.target.closest("[data-quick-add]");
@@ -158,9 +173,23 @@ if (productList) {
       event.preventDefault();
       const productId = Number(quickAddBtn.dataset.quickAdd);
       addToCart(productId, "M", 1);
+      return;
+    }
+
+    const quickViewBtn = event.target.closest("[data-quick-view]");
+    if (quickViewBtn && typeof openQuickViewModal === "function") {
+      event.preventDefault();
+      const productId = Number(quickViewBtn.dataset.quickView);
+      openQuickViewModal(productId);
+      return;
     }
   });
 }
 
 // Initial render
 renderProductList();
+
+// Initialize back to top on products page
+if (typeof initBackToTop === "function") {
+  initBackToTop();
+}

@@ -7,12 +7,40 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=2.2" />
   </head>
   <body>
     <!-- Top announcement -->
     <div class="top-announcement">
       <span>ĐẶC QUYỀN MÙA MỚI:</span> Miễn phí vận chuyển toàn quốc cho đơn từ 500.000đ • Đổi trả dễ dàng trong 30 ngày
+    </div>
+
+    <!-- Animated Continuous Marquee Ticker -->
+    <div class="marquee-bar">
+      <div class="marquee-track">
+        <div class="marquee-item">✨ <span class="highlight">BST XUÂN - HÈ 2026</span> ĐÃ CHÍNH THỨC RA MẮT</div>
+        <span class="marquee-separator">✦</span>
+        <div class="marquee-item">🚀 <span class="highlight">MIỄN PHÍ GIAO HÀNG</span> CHO ĐƠN TỪ 500.000₫</div>
+        <span class="marquee-separator">✦</span>
+        <div class="marquee-item">🎁 NHẬP MÃ <span class="highlight">CLOTHIQUE10</span> GIẢM NGAY 10%</div>
+        <span class="marquee-separator">✦</span>
+        <div class="marquee-item">🌿 100% SỢI LINEN & LỤA SATIN CAO CẤP TỰ NHIÊN</div>
+        <span class="marquee-separator">✦</span>
+        <div class="marquee-item">🛡️ ĐỔI TRẢ 30 NGÀY TẬN NHÀ • ĐỒNG KIỂM TRẢ HÀNG</div>
+        <span class="marquee-separator">✦</span>
+
+        <!-- Duplicated track for seamless loop -->
+        <div class="marquee-item">✨ <span class="highlight">BST XUÂN - HÈ 2026</span> ĐÃ CHÍNH THỨC RA MẮT</div>
+        <span class="marquee-separator">✦</span>
+        <div class="marquee-item">🚀 <span class="highlight">MIỄN PHÍ GIAO HÀNG</span> CHO ĐƠN TỪ 500.000₫</div>
+        <span class="marquee-separator">✦</span>
+        <div class="marquee-item">🎁 NHẬP MÃ <span class="highlight">CLOTHIQUE10</span> GIẢM NGAY 10%</div>
+        <span class="marquee-separator">✦</span>
+        <div class="marquee-item">🌿 100% SỢI LINEN & LỤA SATIN CAO CẤP TỰ NHIÊN</div>
+        <span class="marquee-separator">✦</span>
+        <div class="marquee-item">🛡️ ĐỔI TRẢ 30 NGÀY TẬN NHÀ • ĐỒNG KIỂM TRẢ HÀNG</div>
+        <span class="marquee-separator">✦</span>
+      </div>
     </div>
 
     <!-- Header -->
@@ -45,7 +73,7 @@
           </svg>
         </a>
 
-        <a class="header-icon-btn" href="cart.html" title="Giỏ hàng">
+        <a class="header-cart-btn" href="cart.html" title="Giỏ hàng">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
             <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -60,7 +88,10 @@
       <!-- Hero Banner -->
       <section class="hero">
         <div class="hero-content">
-          <div class="hero-badge">Bộ sưu tập Thu - Đông 2026</div>
+          <div class="hero-badge floating">
+            <span class="radar-dot"></span>
+            Bộ sưu tập Thu - Đông 2026 • New Arrival
+          </div>
           <h1>Trang phục tối giản cho nhịp sống hiện đại</h1>
           <p>Từng đường may, chất liệu linen tự nhiên và lụa satin được tinh tuyển tỉ mỉ mang lại sự tự tin, phóng khoáng và thanh lịch trong mọi khoảnh khắc.</p>
           <div class="hero-buttons">
@@ -71,7 +102,7 @@
       </section>
 
       <!-- Trust Badges -->
-      <div class="section" style="padding-top: 0; padding-bottom: 30px;">
+      <div class="section" style="padding-top: 0; padding-bottom: 30px;" data-reveal>
         <div class="trust-bar">
           <div class="trust-item">
             <div class="trust-icon">
@@ -128,7 +159,7 @@
       </div>
 
       <!-- Categories Showcase -->
-      <section class="section">
+      <section class="section" data-reveal>
         <div class="section-header">
           <div class="section-title-wrap">
             <h2>Danh mục thời trang</h2>
@@ -176,7 +207,7 @@
       </section>
 
       <!-- Featured Products -->
-      <section class="section" id="featured-section">
+      <section class="section" id="featured-section" data-reveal>
         <div class="section-header">
           <div class="section-title-wrap">
             <h2>Sản phẩm nổi bật</h2>
@@ -190,14 +221,40 @@
         <div class="product-grid" id="featured-products"></div>
       </section>
 
-      <!-- Editorial Lookbook Banner -->
-      <section class="section" style="padding-top: 20px;">
+      <!-- Editorial Lookbook Banner with Live Countdown Timer -->
+      <section class="section" style="padding-top: 20px;" data-reveal>
         <div style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); border-radius: var(--radius-lg); padding: clamp(40px, 6vw, 72px); color: #fff; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; align-items: center; box-shadow: var(--shadow-lg);">
           <div>
-            <span style="color: var(--accent); font-weight: 700; text-transform: uppercase; font-size: 12px; letter-spacing: 0.1em; display: block; margin-bottom: 12px;">Triết lý thiết kế</span>
-            <h3 style="font-family: var(--font-serif); font-size: clamp(2rem, 3.5vw, 2.8rem); line-height: 1.25; margin-bottom: 16px;">Vẻ đẹp trường tồn từ sự giản đơn thuần khiết</h3>
-            <p style="color: #cbd5e1; font-size: 16px; line-height: 1.7; margin-bottom: 24px;">Clothique tin rằng phong cách thực sự không đến từ những họa tiết cầu kỳ, mà xuất phát từ chất lượng vải thượng hạng, đường cắt may chuẩn xác và sự thoải mái tuyệt đối cho người mặc.</p>
-            <a class="btn accent" href="products.html">Khám phá bộ sưu tập mới</a>
+            <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(194,142,92,0.2); border: 1px solid rgba(194,142,92,0.4); padding: 4px 12px; border-radius: var(--radius-full); margin-bottom: 14px;">
+              <span class="radar-dot"></span>
+              <span style="color: var(--accent); font-weight: 700; text-transform: uppercase; font-size: 11.5px; letter-spacing: 0.08em;">FLASH SALE GIỚI HẠN</span>
+            </div>
+
+            <h3 style="font-family: var(--font-serif); font-size: clamp(2rem, 3.5vw, 2.8rem); line-height: 1.25; margin-bottom: 14px;">Vẻ đẹp trường tồn từ sự giản đơn thuần khiết</h3>
+            <p style="color: #cbd5e1; font-size: 15px; line-height: 1.7; margin-bottom: 18px;">Clothique tin rằng phong cách thực sự đến từ chất lượng vải thượng hạng, đường cắt may chuẩn xác và sự thoải mái tuyệt đối cho người mặc.</p>
+
+            <!-- Countdown Timer Component -->
+            <div style="margin-bottom: 24px;">
+              <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: #94a3b8; margin-bottom: 6px;">Ưu đãi kết thúc sau:</p>
+              <div class="countdown-wrap" id="flash-sale-countdown">
+                <div class="countdown-box">
+                  <strong data-countdown-hours>07</strong>
+                  <small>Giờ</small>
+                </div>
+                <span class="countdown-colon">:</span>
+                <div class="countdown-box">
+                  <strong data-countdown-mins>42</strong>
+                  <small>Phút</small>
+                </div>
+                <span class="countdown-colon">:</span>
+                <div class="countdown-box">
+                  <strong data-countdown-secs>19</strong>
+                  <small>Giây</small>
+                </div>
+              </div>
+            </div>
+
+            <a class="btn accent lg" href="products.html">Khám phá bộ sưu tập mới</a>
           </div>
           <div style="position: relative; border-radius: var(--radius-md); overflow: hidden; aspect-ratio: 4/3; box-shadow: var(--shadow-md);">
             <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=900&q=80" alt="Clothique Editorial Lookbook" style="width: 100%; height: 100%; object-fit: cover;" />
@@ -255,8 +312,8 @@
       </div>
     </footer>
 
-    <script src="assets/js/data.js"></script>
-    <script src="assets/js/cart-store.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/data.js?v=2.2"></script>
+    <script src="assets/js/cart-store.js?v=2.2"></script>
+    <script src="assets/js/main.js?v=2.2"></script>
   </body>
 </html>

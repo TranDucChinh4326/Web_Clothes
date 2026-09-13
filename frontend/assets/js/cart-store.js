@@ -94,6 +94,7 @@ function showToast(message, type = "success") {
   toast.innerHTML = `
     <span class="toast-icon">${iconSvg}</span>
     <span class="toast-message">${message}</span>
+    <div class="toast-progress"></div>
   `;
 
   toastContainer.appendChild(toast);

@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bảng điều khiển Quản trị | Clothique Admin</title>
+    <title>Bảng điều khiển quản trị | Clothique Admin</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/styles.css?v=2.2" />
   </head>
   <body>
     <header class="site-header">
@@ -32,59 +32,107 @@
     </header>
 
     <main class="section">
-      <div class="section-header">
+      <!-- Title & Time Bar -->
+      <div class="section-header" style="align-items: center;">
         <div class="section-title-wrap">
-          <h1 style="font-family: var(--font-body); font-size: 2.2rem; font-weight: 700;">Tổng quan hoạt động kinh doanh</h1>
-          <p class="section-subtitle">Thống kê hiệu suất bán hàng và tình trạng đơn hàng thời gian thực</p>
+          <h1 style="font-family: var(--font-serif); font-size: 2.2rem; font-weight: 600;">Báo cáo tổng quan kinh doanh</h1>
+          <p class="section-subtitle">Dữ liệu thời gian thực được đồng bộ hóa từ hệ thống cửa hàng trực tuyến</p>
         </div>
-        <div>
-          <span style="font-size: 13px; color: var(--muted); background: var(--panel); border: 1px solid var(--line); padding: 8px 14px; border-radius: var(--radius-sm);">Hôm nay: 13/09/2026</span>
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span style="display: inline-flex; align-items: center; font-size: 12.5px; font-weight: 600; color: #166534; background: #ecfdf5; border: 1px solid #bbf7d0; padding: 6px 12px; border-radius: var(--radius-full);">
+            <span class="radar-dot" style="margin-right: 6px;"></span> Hệ thống trực tuyến
+          </span>
+          <span style="font-size: 13px; color: var(--muted); background: var(--panel); border: 1px solid var(--line); padding: 6px 14px; border-radius: var(--radius-sm);">Hôm nay: 13/09/2026</span>
         </div>
       </div>
 
-      <!-- Metric Cards Grid -->
+      <!-- Metric Cards Grid with Interactive Hover & Animated Counters -->
       <div class="metric-grid">
-        <div class="metric-card">
+        <div class="metric-card stat-card">
           <div class="metric-top">
             <span>Doanh thu hôm nay</span>
             <span class="metric-trend">↑ +14.2%</span>
           </div>
-          <div class="metric-number">12.450.000đ</div>
-          <span style="font-size: 12px; color: var(--muted);">So với 10.900.000đ ngày hôm qua</span>
+          <div class="metric-number" id="counter-revenue" data-target="12450000">0₫</div>
+          <span style="font-size: 12px; color: var(--muted);">So với 10.900.000₫ ngày hôm qua</span>
         </div>
 
-        <div class="metric-card">
+        <div class="metric-card stat-card">
           <div class="metric-top">
             <span>Đơn hàng mới</span>
             <span class="metric-trend">↑ +8.5%</span>
           </div>
-          <div class="metric-number">18</div>
-          <span style="font-size: 12px; color: var(--muted);">Trong đó có 5 đơn đang chờ đóng gói</span>
+          <div class="metric-number" id="counter-orders" data-target="18">0</div>
+          <span style="font-size: 12px; color: var(--muted);">Trong đó có 5 đơn đang chờ duyệt</span>
         </div>
 
-        <div class="metric-card">
+        <div class="metric-card stat-card">
           <div class="metric-top">
             <span>Khách hàng mới</span>
             <span class="metric-trend">↑ +12.0%</span>
           </div>
-          <div class="metric-number">34</div>
-          <span style="font-size: 12px; color: var(--muted);">14 tài khoản mua lần đầu</span>
+          <div class="metric-number" id="counter-customers" data-target="34">0</div>
+          <span style="font-size: 12px; color: var(--muted);">14 tài khoản mua hàng lần đầu</span>
         </div>
 
-        <div class="metric-card">
+        <div class="metric-card stat-card">
           <div class="metric-top">
             <span>Cảnh báo tồn kho</span>
             <span style="font-size: 12px; font-weight: 700; color: var(--danger);">Cần nhập</span>
           </div>
-          <div class="metric-number" style="color: var(--danger);">4</div>
+          <div class="metric-number" id="counter-stock" data-target="4" style="color: var(--danger);">0</div>
           <span style="font-size: 12px; color: var(--muted);">Sản phẩm còn dưới 5 chiếc</span>
         </div>
       </div>
 
+      <!-- Visual 7-Day Revenue Analytics Chart -->
+      <div style="background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius-md); padding: 24px; margin-top: 24px; box-shadow: var(--shadow-xs);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+          <div>
+            <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 4px;">Biểu đồ tăng trưởng doanh thu (7 ngày gần nhất)</h3>
+            <p style="font-size: 13px; color: var(--muted);">Trung bình đạt 11.200.000₫ / ngày</p>
+          </div>
+          <span style="font-size: 12px; background: var(--line-light); padding: 4px 10px; border-radius: 4px; font-weight: 600; color: var(--ink);">Cập nhật mỗi 5 phút</span>
+        </div>
+
+        <!-- Custom CSS SVG Bar Chart -->
+        <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 16px; align-items: flex-end; height: 160px; padding-top: 20px; border-bottom: 1px solid var(--line-light);">
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 8px; height: 100%; justify-content: flex-end;">
+            <div style="width: 100%; max-width: 42px; background: var(--line); height: 50%; border-radius: 4px 4px 0 0; transition: height 1s cubic-bezier(0.16, 1, 0.3, 1);" title="07/09: 6.200.000₫"></div>
+            <span style="font-size: 12px; color: var(--muted);">T2</span>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 8px; height: 100%; justify-content: flex-end;">
+            <div style="width: 100%; max-width: 42px; background: var(--line); height: 65%; border-radius: 4px 4px 0 0; transition: height 1s cubic-bezier(0.16, 1, 0.3, 1);" title="08/09: 8.100.000₫"></div>
+            <span style="font-size: 12px; color: var(--muted);">T3</span>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 8px; height: 100%; justify-content: flex-end;">
+            <div style="width: 100%; max-width: 42px; background: var(--line); height: 58%; border-radius: 4px 4px 0 0; transition: height 1s cubic-bezier(0.16, 1, 0.3, 1);" title="09/09: 7.400.000₫"></div>
+            <span style="font-size: 12px; color: var(--muted);">T4</span>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 8px; height: 100%; justify-content: flex-end;">
+            <div style="width: 100%; max-width: 42px; background: var(--line); height: 80%; border-radius: 4px 4px 0 0; transition: height 1s cubic-bezier(0.16, 1, 0.3, 1);" title="10/09: 10.100.000₫"></div>
+            <span style="font-size: 12px; color: var(--muted);">T5</span>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 8px; height: 100%; justify-content: flex-end;">
+            <div style="width: 100%; max-width: 42px; background: var(--line); height: 74%; border-radius: 4px 4px 0 0; transition: height 1s cubic-bezier(0.16, 1, 0.3, 1);" title="11/09: 9.300.000₫"></div>
+            <span style="font-size: 12px; color: var(--muted);">T6</span>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 8px; height: 100%; justify-content: flex-end;">
+            <div style="width: 100%; max-width: 42px; background: var(--accent); height: 88%; border-radius: 4px 4px 0 0; transition: height 1s cubic-bezier(0.16, 1, 0.3, 1);" title="12/09: 10.900.000₫"></div>
+            <span style="font-size: 12px; color: var(--muted);">T7</span>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 8px; height: 100%; justify-content: flex-end;">
+            <div style="width: 100%; max-width: 42px; background: linear-gradient(180deg, var(--accent), var(--ink)); height: 100%; border-radius: 4px 4px 0 0; box-shadow: 0 4px 12px rgba(194,142,92,0.3); transition: height 1s cubic-bezier(0.16, 1, 0.3, 1);" title="Hôm nay: 12.450.000₫"></div>
+            <span style="font-size: 12px; font-weight: 700; color: var(--ink);">CN (Nay)</span>
+          </div>
+        </div>
+      </div>
+
       <!-- Recent Orders Table -->
-      <div class="section-header" style="margin-top: 20px;">
+      <div class="section-header" style="margin-top: 32px;">
         <div class="section-title-wrap">
           <h2 style="font-size: 1.5rem;">Đơn hàng cần xử lý</h2>
+          <p class="section-subtitle">Duyệt và chuyển giao cho đơn vị vận chuyển</p>
         </div>
         <a class="view-all-link" href="orders.html">Xem toàn bộ đơn hàng →</a>
       </div>
@@ -107,32 +155,92 @@
               <td><strong>#CL2026091301</strong></td>
               <td>Nguyễn Minh Anh<br><span style="font-size: 12px; color: var(--muted);">0908 123 456</span></td>
               <td>Áo sơ mi linen cổ trụ (Size M)</td>
-              <td><strong>1.248.000đ</strong></td>
+              <td><strong>1.248.000₫</strong></td>
               <td>COD</td>
-              <td><span class="badge badge-warning">Đang xử lý</span></td>
-              <td><button class="btn" style="min-height: 32px; padding: 0 12px; font-size: 12px;">Duyệt đơn</button></td>
+              <td><span class="badge badge-warning" id="badge-order-1">Đang xử lý</span></td>
+              <td>
+                <button class="btn primary" id="btn-approve-1" style="min-height: 32px; padding: 0 12px; font-size: 12px;" type="button">
+                  Duyệt đơn
+                </button>
+              </td>
             </tr>
             <tr>
               <td><strong>#CL2026091302</strong></td>
               <td>Trần Hoàng Nam<br><span style="font-size: 12px; color: var(--muted);">0912 345 678</span></td>
               <td>Váy đầm midi lụa satin (Size S)</td>
-              <td><strong>799.000đ</strong></td>
+              <td><strong>799.000₫</strong></td>
               <td>VietQR</td>
               <td><span class="badge badge-success">Đã thanh toán</span></td>
-              <td><button class="btn" style="min-height: 32px; padding: 0 12px; font-size: 12px;">Đóng gói</button></td>
+              <td>
+                <button class="btn" style="min-height: 32px; padding: 0 12px; font-size: 12px;" type="button">
+                  In hóa đơn
+                </button>
+              </td>
             </tr>
             <tr>
               <td><strong>#CL2026091303</strong></td>
               <td>Lê Thị Thu Thảo<br><span style="font-size: 12px; color: var(--muted);">0978 888 999</span></td>
               <td>Túi xách da Crossbody cao cấp</td>
-              <td><strong>549.000đ</strong></td>
+              <td><strong>549.000₫</strong></td>
               <td>MoMo</td>
               <td><span class="badge badge-success">Đã thanh toán</span></td>
-              <td><button class="btn" style="min-height: 32px; padding: 0 12px; font-size: 12px;">Đóng gói</button></td>
+              <td>
+                <button class="btn" style="min-height: 32px; padding: 0 12px; font-size: 12px;" type="button">
+                  In hóa đơn
+                </button>
+              </td>
             </tr>
           </tbody>
         </table>
       </div>
     </main>
+
+    <!-- Animated Counters Script -->
+    <script>
+      function animateValue(id, start, end, duration, isCurrency = false) {
+        const obj = document.getElementById(id);
+        if (!obj) return;
+        let startTimestamp = null;
+        const step = (timestamp) => {
+          if (!startTimestamp) startTimestamp = timestamp;
+          const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+          // Ease-out cubic
+          const easeOut = 1 - Math.pow(1 - progress, 3);
+          const current = Math.floor(easeOut * (end - start) + start);
+
+          if (isCurrency) {
+            obj.textContent = new Intl.NumberFormat("vi-VN").format(current) + "₫";
+          } else {
+            obj.textContent = current;
+          }
+
+          if (progress < 1) {
+            window.requestAnimationFrame(step);
+          }
+        };
+        window.requestAnimationFrame(step);
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        // Run count-up animations
+        animateValue("counter-revenue", 0, 12450000, 1400, true);
+        animateValue("counter-orders", 0, 18, 1000, false);
+        animateValue("counter-customers", 0, 34, 1100, false);
+        animateValue("counter-stock", 0, 4, 800, false);
+
+        // Interactive Approve Action
+        const btnApprove = document.getElementById("btn-approve-1");
+        const badgeOrder = document.getElementById("badge-order-1");
+        if (btnApprove && badgeOrder) {
+          btnApprove.addEventListener("click", () => {
+            badgeOrder.textContent = "Đã duyệt";
+            badgeOrder.className = "badge badge-success";
+            btnApprove.textContent = "Đã chuyển kho";
+            btnApprove.className = "btn";
+            btnApprove.disabled = true;
+          });
+        }
+      });
+    </script>
   </body>
 </html>
