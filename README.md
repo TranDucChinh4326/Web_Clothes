@@ -1,4 +1,4 @@
-# Web Clothes
+# Web_Clothes
 
 Frontend-first clothing shop project for Git and Cloudflare Pages deployment.
 
