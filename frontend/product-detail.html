@@ -1,27 +1,124 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chi tiết sản phẩm | Clothique</title>
+    <title>Chi tiáº¿t sáº£n pháº©m | Clothique</title>
     <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
   <body>
+    <!-- Top announcement -->
+    <div class="top-announcement">
+      <span>Äáº¶C QUYá»€N MÃ™A Má»šI:</span> Miá»…n phÃ­ váº­n chuyá»ƒn toÃ n quá»‘c cho Ä‘Æ¡n tá»« 500.000Ä‘ â€¢ Äá»•i tráº£ dá»… dÃ ng trong 30 ngÃ y
+    </div>
+
+    <!-- Header -->
     <header class="site-header">
-      <a class="brand" href="index.html">Clothique</a>
+      <div class="brand-wrapper">
+        <a class="brand" href="index.html">Clothique</a>
+      </div>
+
       <nav class="main-nav">
-        <a href="products.html">Sản phẩm</a>
-        <a href="cart.html">Giỏ hàng (<span data-cart-count>0</span>)</a>
-        <a href="login.html">Đăng nhập</a>
+        <a class="nav-link" href="index.html">Trang chá»§</a>
+        <a class="nav-link active" href="products.html">Sáº£n pháº©m</a>
+        <a class="nav-link" href="products.html?category=ao">Ão</a>
+        <a class="nav-link" href="products.html?category=quan">Quáº§n</a>
+        <a class="nav-link" href="products.html?category=vay">VÃ¡y</a>
+        <a class="nav-link" href="products.html?category=phu-kien">Phá»¥ kiá»‡n</a>
       </nav>
+
+      <div class="header-actions">
+        <a class="header-icon-btn" href="profile.html" title="TÃ i khoáº£n">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </a>
+
+        <a class="header-icon-btn" href="cart.html" title="Giá» hÃ ng">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-badge" data-cart-count>0</span>
+        </a>
+      </div>
     </header>
 
     <main class="section">
-      <div class="detail-layout" id="product-detail"></div>
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Trang chá»§</a>
+        <span>/</span>
+        <a href="products.html">Sáº£n pháº©m</a>
+        <span>/</span>
+        <span id="breadcrumb-product-name">Chi tiáº¿t sáº£n pháº©m</span>
+      </nav>
+
+      <!-- Main Product Detail Layout -->
+      <div id="product-detail"></div>
+
+      <!-- Related Products Section -->
+      <section style="margin-top: 80px; padding-top: 48px; border-top: 1px solid var(--line);">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <h2>Gá»£i Ã½ dÃ nh cho báº¡n</h2>
+            <p class="section-subtitle">CÃ¡c sáº£n pháº©m cÃ¹ng bá»™ sÆ°u táº­p Ä‘Æ°á»£c Æ°a chuá»™ng</p>
+          </div>
+          <a class="view-all-link" href="products.html">
+            Xem thÃªm
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <div class="product-grid" id="related-products"></div>
+      </section>
     </main>
 
+    <!-- Footer -->
     <footer class="site-footer">
-      <p>© 2026 Clothique.</p>
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h3>Clothique</h3>
+          <p>ThÆ°Æ¡ng hiá»‡u thá»i trang tá»‘i giáº£n Ä‘Æ°Æ¡ng Ä‘áº¡i, tÃ´n vinh phong cÃ¡ch sá»‘ng tinh táº¿ vá»›i cháº¥t liá»‡u tá»± nhiÃªn vÃ  Ä‘Æ°á»ng may sáº¯c nÃ©t.</p>
+        </div>
+
+        <div class="footer-column">
+          <h4>Danh má»¥c</h4>
+          <ul class="footer-links">
+            <li><a href="products.html?category=ao">Ão sÆ¡ mi & Blazer</a></li>
+            <li><a href="products.html?category=quan">Quáº§n Ã¢u & Shorts</a></li>
+            <li><a href="products.html?category=vay">VÃ¡y Ä‘áº§m thiáº¿t káº¿</a></li>
+            <li><a href="products.html?category=phu-kien">TÃºi da & Phá»¥ kiá»‡n</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>ChÄƒm sÃ³c khÃ¡ch hÃ ng</h4>
+          <ul class="footer-links">
+            <li><a href="profile.html">Kiá»ƒm tra Ä‘Æ¡n hÃ ng</a></li>
+            <li><a href="#">ChÃ­nh sÃ¡ch Ä‘á»•i tráº£ 30 ngÃ y</a></li>
+            <li><a href="#">HÆ°á»›ng dáº«n chá»n kÃ­ch cá»¡</a></li>
+            <li><a href="admin/dashboard.html">Khu vá»±c quáº£n trá»‹ (Admin)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>LiÃªn há»‡</h4>
+          <ul class="footer-links">
+            <li><span>Hotline: 1900 888 999</span></li>
+            <li><span>Email: support@clothique.vn</span></li>
+            <li><span>Äá»‹a chá»‰: 128 Nguyá»…n Huá»‡, Quáº­n 1, TP. HCM</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>Â© 2026 Clothique. ÄÃ£ Ä‘Äƒng kÃ½ báº£n quyá»n thÆ°Æ¡ng hiá»‡u.</p>
+        <div>
+          <span>Cam káº¿t sáº£n pháº©m chÃ­nh hÃ£ng 100%</span>
+        </div>
+      </div>
     </footer>
 
     <script src="assets/js/data.js"></script>

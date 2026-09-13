@@ -1,4 +1,4 @@
-const CART_KEY = "clothique_cart";
+﻿const CART_KEY = "clothique_cart";
 
 function readCart() {
   try {
@@ -24,12 +24,32 @@ function addToCart(productId, size = "M", quantity = 1) {
 
   saveCart(cartItems);
   updateCartCount();
+
+  const product = typeof getProductById === "function" ? getProductById(productId) : null;
+  const productName = product ? product.name : "Sáº£n pháº©m";
+  showToast(`ÄÃ£ thÃªm "${productName}" (Size ${size}) vÃ o giá» hÃ ng!`, "success");
+}
+
+function updateCartItemQuantity(productId, size, delta) {
+  const cartItems = readCart();
+  const itemIndex = cartItems.findIndex((item) => item.productId === productId && item.size === size);
+
+  if (itemIndex > -1) {
+    cartItems[itemIndex].quantity += delta;
+    if (cartItems[itemIndex].quantity <= 0) {
+      cartItems.splice(itemIndex, 1);
+      showToast("ÄÃ£ xÃ³a sáº£n pháº©m khá»i giá» hÃ ng", "info");
+    }
+    saveCart(cartItems);
+    updateCartCount();
+  }
 }
 
 function removeFromCart(productId, size) {
   const nextItems = readCart().filter((item) => item.productId !== productId || item.size !== size);
   saveCart(nextItems);
   updateCartCount();
+  showToast("ÄÃ£ xÃ³a sáº£n pháº©m khá»i giá» hÃ ng", "info");
 }
 
 function clearCart() {
@@ -38,14 +58,53 @@ function clearCart() {
 }
 
 function updateCartCount() {
-  const cartCount = document.querySelector("[data-cart-count]");
-
-  if (!cartCount) {
-    return;
-  }
-
+  const cartBadges = document.querySelectorAll("[data-cart-count]");
   const totalItems = readCart().reduce((sum, item) => sum + item.quantity, 0);
-  cartCount.textContent = totalItems;
+
+  cartBadges.forEach((badge) => {
+    badge.textContent = totalItems;
+    badge.classList.remove("bump");
+    void badge.offsetWidth;
+    if (totalItems > 0) {
+      badge.classList.add("bump");
+    }
+  });
 }
 
-document.addEventListener("DOMContentLoaded", updateCartCount);
+function showToast(message, type = "success") {
+  let toastContainer = document.querySelector("#toast-container");
+  if (!toastContainer) {
+    toastContainer = document.createElement("div");
+    toastContainer.id = "toast-container";
+    toastContainer.className = "toast-container";
+    document.body.appendChild(toastContainer);
+  }
+
+  const toast = document.createElement("div");
+  toast.className = `toast toast-${type}`;
+
+  let iconSvg = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>`;
+  if (type === "info") {
+    iconSvg = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>`;
+  } else if (type === "error") {
+    iconSvg = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>`;
+  }
+
+  toast.innerHTML = `
+    <span class="toast-icon">${iconSvg}</span>
+    <span class="toast-message">${message}</span>
+  `;
+
+  toastContainer.appendChild(toast);
+
+  setTimeout(() => {
+    toast.classList.add("fade-out");
+    setTimeout(() => {
+      toast.remove();
+    }, 300);
+  }, 3500);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  updateCartCount();
+});

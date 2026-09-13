@@ -1,39 +1,174 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tài khoản | Clothique</title>
+    <title>TÃ i khoáº£n cÃ¡ nhÃ¢n | Clothique</title>
     <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
   <body>
+    <!-- Top announcement -->
+    <div class="top-announcement">
+      <span>Äáº¶C QUYá»€N MÃ™A Má»šI:</span> Miá»…n phÃ­ váº­n chuyá»ƒn toÃ n quá»‘c cho Ä‘Æ¡n tá»« 500.000Ä‘ â€¢ Äá»•i tráº£ dá»… dÃ ng trong 30 ngÃ y
+    </div>
+
+    <!-- Header -->
     <header class="site-header">
-      <a class="brand" href="index.html">Clothique</a>
+      <div class="brand-wrapper">
+        <a class="brand" href="index.html">Clothique</a>
+      </div>
+
       <nav class="main-nav">
-        <a href="products.html">Sản phẩm</a>
-        <a href="cart.html">Giỏ hàng (<span data-cart-count>0</span>)</a>
-        <a href="login.html">Đăng nhập</a>
+        <a class="nav-link" href="index.html">Trang chá»§</a>
+        <a class="nav-link" href="products.html">Sáº£n pháº©m</a>
+        <a class="nav-link" href="products.html?category=ao">Ão</a>
+        <a class="nav-link" href="products.html?category=quan">Quáº§n</a>
+        <a class="nav-link" href="products.html?category=vay">VÃ¡y</a>
+        <a class="nav-link" href="products.html?category=phu-kien">Phá»¥ kiá»‡n</a>
       </nav>
+
+      <div class="header-actions">
+        <a class="header-icon-btn" href="profile.html" title="TÃ i khoáº£n" style="color: var(--accent);">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </a>
+
+        <a class="header-icon-btn" href="cart.html" title="Giá» hÃ ng">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-badge" data-cart-count>0</span>
+        </a>
+      </div>
     </header>
 
-    <main class="section narrow">
-      <h1>Tài khoản của tôi</h1>
-      <div class="info-panel">
-        <p><strong>Họ tên:</strong> Nguyễn Minh Anh</p>
-        <p><strong>Email:</strong> minh.anh@example.com</p>
-        <p><strong>Hạng thành viên:</strong> Silver</p>
+    <main class="section">
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Trang chá»§</a>
+        <span>/</span>
+        <span>Há»“ sÆ¡ cÃ¡ nhÃ¢n</span>
+      </nav>
+
+      <!-- Profile Overview Card -->
+      <div class="profile-card">
+        <div class="profile-user">
+          <div class="profile-avatar">MA</div>
+          <div>
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 4px;">
+              <h2 style="font-size: 20px; font-weight: 700; color: var(--ink);">Nguyá»…n Minh Anh</h2>
+              <span class="badge badge-silver">ThÃ nh viÃªn Silver</span>
+            </div>
+            <p style="font-size: 14px; color: var(--muted);">minh.anh@example.com â€¢ 0908 123 456</p>
+            <p style="font-size: 13px; color: var(--accent-dark); margin-top: 4px; font-weight: 600;">Äiá»ƒm tÃ­ch lÅ©y: 450 Ä‘iá»ƒm (Æ¯u Ä‘Ã£i 5% cho Ä‘Æ¡n tiáº¿p theo)</p>
+          </div>
+        </div>
+
+        <div>
+          <button class="btn secondary" type="button">Chá»‰nh sá»­a há»“ sÆ¡</button>
+        </div>
       </div>
-      <h2>Đơn hàng gần đây</h2>
-      <div class="order-row">
-        <span>#CL2026091301</span>
-        <span>Đang xử lý</span>
-        <strong>1.248.000đ</strong>
+
+      <!-- Orders Section -->
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <h3 style="font-family: var(--font-serif); font-size: 1.8rem; font-weight: 600;">Lá»‹ch sá»­ Ä‘Æ¡n hÃ ng gáº§n Ä‘Ã¢y</h3>
+          <p class="section-subtitle">Theo dÃµi tráº¡ng thÃ¡i vÃ  lá»‹ch sá»­ mua sáº¯m cá»§a báº¡n táº¡i Clothique</p>
+        </div>
+      </div>
+
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>MÃ£ Ä‘Æ¡n hÃ ng</th>
+              <th>NgÃ y Ä‘áº·t</th>
+              <th>Sáº£n pháº©m</th>
+              <th>Tá»•ng thanh toÃ¡n</th>
+              <th>Tráº¡ng thÃ¡i</th>
+              <th>Thao tÃ¡c</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong style="color: var(--ink);">#CL2026091301</strong></td>
+              <td>13/09/2026</td>
+              <td>Ão sÆ¡ mi linen cá»• trá»¥ (Size M) + 1 sáº£n pháº©m khÃ¡c</td>
+              <td><strong>1.248.000Ä‘</strong></td>
+              <td><span class="badge badge-warning">Äang xá»­ lÃ½</span></td>
+              <td><a href="#" style="font-size: 13px; font-weight: 600; color: var(--ink); text-decoration: underline;">Chi tiáº¿t</a></td>
+            </tr>
+            <tr>
+              <td><strong style="color: var(--ink);">#CL2026082405</strong></td>
+              <td>24/08/2026</td>
+              <td>Quáº§n tÃ¢y xáº¿p ly dÃ¡ng suÃ´ng (Size L)</td>
+              <td><strong>649.000Ä‘</strong></td>
+              <td><span class="badge badge-success">ÄÃ£ giao thÃ nh cÃ´ng</span></td>
+              <td><a href="#" style="font-size: 13px; font-weight: 600; color: var(--ink); text-decoration: underline;">Mua láº¡i</a></td>
+            </tr>
+            <tr>
+              <td><strong style="color: var(--ink);">#CL2026071289</strong></td>
+              <td>12/07/2026</td>
+              <td>VÃ¡y Ä‘áº§m midi lá»¥a satin (Size M)</td>
+              <td><strong>799.000Ä‘</strong></td>
+              <td><span class="badge badge-success">ÄÃ£ giao thÃ nh cÃ´ng</span></td>
+              <td><a href="#" style="font-size: 13px; font-weight: 600; color: var(--ink); text-decoration: underline;">Mua láº¡i</a></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </main>
 
+    <!-- Footer -->
     <footer class="site-footer">
-      <p>© 2026 Clothique.</p>
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h3>Clothique</h3>
+          <p>ThÆ°Æ¡ng hiá»‡u thá»i trang tá»‘i giáº£n Ä‘Æ°Æ¡ng Ä‘áº¡i, tÃ´n vinh phong cÃ¡ch sá»‘ng tinh táº¿ vá»›i cháº¥t liá»‡u tá»± nhiÃªn vÃ  Ä‘Æ°á»ng may sáº¯c nÃ©t.</p>
+        </div>
+
+        <div class="footer-column">
+          <h4>Danh má»¥c</h4>
+          <ul class="footer-links">
+            <li><a href="products.html?category=ao">Ão sÆ¡ mi & Blazer</a></li>
+            <li><a href="products.html?category=quan">Quáº§n Ã¢u & Shorts</a></li>
+            <li><a href="products.html?category=vay">VÃ¡y Ä‘áº§m thiáº¿t káº¿</a></li>
+            <li><a href="products.html?category=phu-kien">TÃºi da & Phá»¥ kiá»‡n</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>ChÄƒm sÃ³c khÃ¡ch hÃ ng</h4>
+          <ul class="footer-links">
+            <li><a href="profile.html">Kiá»ƒm tra Ä‘Æ¡n hÃ ng</a></li>
+            <li><a href="#">ChÃ­nh sÃ¡ch Ä‘á»•i tráº£ 30 ngÃ y</a></li>
+            <li><a href="#">HÆ°á»›ng dáº«n chá»n kÃ­ch cá»¡</a></li>
+            <li><a href="admin/dashboard.html">Khu vá»±c quáº£n trá»‹ (Admin)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>LiÃªn há»‡</h4>
+          <ul class="footer-links">
+            <li><span>Hotline: 1900 888 999</span></li>
+            <li><span>Email: support@clothique.vn</span></li>
+            <li><span>Äá»‹a chá»‰: 128 Nguyá»…n Huá»‡, Quáº­n 1, TP. HCM</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>Â© 2026 Clothique. ÄÃ£ Ä‘Äƒng kÃ½ báº£n quyá»n thÆ°Æ¡ng hiá»‡u.</p>
+        <div>
+          <span>Báº£o máº­t dá»¯ liá»‡u cÃ¡ nhÃ¢n</span>
+        </div>
+      </div>
     </footer>
+
     <script src="assets/js/cart-store.js"></script>
   </body>
 </html>

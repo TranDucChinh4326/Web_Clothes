@@ -1,27 +1,134 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quản trị | Clothique</title>
+    <title>Báº£ng Ä‘iá»u khiá»ƒn Quáº£n trá»‹ | Clothique Admin</title>
     <link rel="stylesheet" href="../assets/css/styles.css" />
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="../index.html">Clothique Admin</a>
+      <div class="brand-wrapper">
+        <a class="brand" href="dashboard.html">Clothique Admin</a>
+        <span style="font-size: 11px; font-weight: 700; background: var(--line-light); color: var(--muted); padding: 2px 8px; border-radius: var(--radius-full); text-transform: uppercase;">v2.4 Pro</span>
+      </div>
+
       <nav class="main-nav">
-        <a href="dashboard.html">Tổng quan</a>
-        <a href="products.html">Sản phẩm</a>
-        <a href="orders.html">Đơn hàng</a>
+        <a class="nav-link active" href="dashboard.html">Tá»•ng quan</a>
+        <a class="nav-link" href="products.html">Sáº£n pháº©m</a>
+        <a class="nav-link" href="orders.html">ÄÆ¡n hÃ ng</a>
+        <a class="nav-link" href="../index.html" target="_blank" style="color: var(--accent-dark);">Xem Cá»­a hÃ ng â†—</a>
       </nav>
+
+      <div class="header-actions">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <div style="width: 36px; height: 36px; border-radius: 50%; background: var(--ink); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px;">AD</div>
+          <span style="font-size: 14px; font-weight: 600;">Quáº£n trá»‹ viÃªn</span>
+        </div>
+      </div>
     </header>
 
     <main class="section">
-      <h1>Tổng quan</h1>
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <h1 style="font-family: var(--font-serif); font-size: 2.2rem; font-weight: 600;">Tá»•ng quan hoáº¡t Ä‘á»™ng kinh doanh</h1>
+          <p class="section-subtitle">Thá»‘ng kÃª hiá»‡u suáº¥t bÃ¡n hÃ ng vÃ  tÃ¬nh tráº¡ng Ä‘Æ¡n hÃ ng thá»i gian thá»±c</p>
+        </div>
+        <div>
+          <span style="font-size: 13px; color: var(--muted); background: var(--panel); border: 1px solid var(--line); padding: 8px 14px; border-radius: var(--radius-sm);">HÃ´m nay: 13/09/2026</span>
+        </div>
+      </div>
+
+      <!-- Metric Cards Grid -->
       <div class="metric-grid">
-        <div class="metric"><span>Doanh thu hôm nay</span><strong>12.450.000đ</strong></div>
-        <div class="metric"><span>Đơn hàng mới</span><strong>18</strong></div>
-        <div class="metric"><span>Sản phẩm sắp hết</span><strong>7</strong></div>
+        <div class="metric-card">
+          <div class="metric-top">
+            <span>Doanh thu hÃ´m nay</span>
+            <span class="metric-trend">â†‘ +14.2%</span>
+          </div>
+          <div class="metric-number">12.450.000Ä‘</div>
+          <span style="font-size: 12px; color: var(--muted);">So vá»›i 10.900.000Ä‘ ngÃ y hÃ´m qua</span>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-top">
+            <span>ÄÆ¡n hÃ ng má»›i</span>
+            <span class="metric-trend">â†‘ +8.5%</span>
+          </div>
+          <div class="metric-number">18</div>
+          <span style="font-size: 12px; color: var(--muted);">Trong Ä‘Ã³ cÃ³ 5 Ä‘Æ¡n Ä‘ang chá» Ä‘Ã³ng gÃ³i</span>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-top">
+            <span>KhÃ¡ch hÃ ng má»›i</span>
+            <span class="metric-trend">â†‘ +12.0%</span>
+          </div>
+          <div class="metric-number">34</div>
+          <span style="font-size: 12px; color: var(--muted);">14 tÃ i khoáº£n mua láº§n Ä‘áº§u</span>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-top">
+            <span>Cáº£nh bÃ¡o tá»“n kho</span>
+            <span style="font-size: 12px; font-weight: 700; color: var(--danger);">Cáº§n nháº­p</span>
+          </div>
+          <div class="metric-number" style="color: var(--danger);">4</div>
+          <span style="font-size: 12px; color: var(--muted);">Sáº£n pháº©m cÃ²n dÆ°á»›i 5 chiáº¿c</span>
+        </div>
+      </div>
+
+      <!-- Recent Orders Table -->
+      <div class="section-header" style="margin-top: 20px;">
+        <div class="section-title-wrap">
+          <h2 style="font-size: 1.5rem;">ÄÆ¡n hÃ ng cáº§n xá»­ lÃ½</h2>
+        </div>
+        <a class="view-all-link" href="orders.html">Xem toÃ n bá»™ Ä‘Æ¡n hÃ ng â†’</a>
+      </div>
+
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>MÃ£ Ä‘Æ¡n</th>
+              <th>KhÃ¡ch hÃ ng</th>
+              <th>Sáº£n pháº©m</th>
+              <th>Tá»•ng tiá»n</th>
+              <th>Thanh toÃ¡n</th>
+              <th>Tráº¡ng thÃ¡i</th>
+              <th>Thao tÃ¡c</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>#CL2026091301</strong></td>
+              <td>Nguyá»…n Minh Anh<br><span style="font-size: 12px; color: var(--muted);">0908 123 456</span></td>
+              <td>Ão sÆ¡ mi linen cá»• trá»¥ (Size M)</td>
+              <td><strong>1.248.000Ä‘</strong></td>
+              <td>COD</td>
+              <td><span class="badge badge-warning">Äang xá»­ lÃ½</span></td>
+              <td><button class="btn" style="min-height: 32px; padding: 0 12px; font-size: 12px;">Duyá»‡t Ä‘Æ¡n</button></td>
+            </tr>
+            <tr>
+              <td><strong>#CL2026091302</strong></td>
+              <td>Tráº§n HoÃ ng Nam<br><span style="font-size: 12px; color: var(--muted);">0912 345 678</span></td>
+              <td>VÃ¡y Ä‘áº§m midi lá»¥a satin (Size S)</td>
+              <td><strong>799.000Ä‘</strong></td>
+              <td>VietQR</td>
+              <td><span class="badge badge-success">ÄÃ£ thanh toÃ¡n</span></td>
+              <td><button class="btn" style="min-height: 32px; padding: 0 12px; font-size: 12px;">ÄÃ³ng gÃ³i</button></td>
+            </tr>
+            <tr>
+              <td><strong>#CL2026091303</strong></td>
+              <td>LÃª Thá»‹ Thu Tháº£o<br><span style="font-size: 12px; color: var(--muted);">0978 888 999</span></td>
+              <td>TÃºi xÃ¡ch da Crossbody cao cáº¥p</td>
+              <td><strong>549.000Ä‘</strong></td>
+              <td>MoMo</td>
+              <td><span class="badge badge-success">ÄÃ£ thanh toÃ¡n</span></td>
+              <td><button class="btn" style="min-height: 32px; padding: 0 12px; font-size: 12px;">ÄÃ³ng gÃ³i</button></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </main>
   </body>

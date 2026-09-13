@@ -1,33 +1,178 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Giỏ hàng | Clothique</title>
+    <title>Giá» hÃ ng cá»§a báº¡n | Clothique</title>
     <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
   <body>
+    <!-- Top announcement -->
+    <div class="top-announcement">
+      <span>Äáº¶C QUYá»€N MÃ™A Má»šI:</span> Miá»…n phÃ­ váº­n chuyá»ƒn toÃ n quá»‘c cho Ä‘Æ¡n tá»« 500.000Ä‘ â€¢ Äá»•i tráº£ dá»… dÃ ng trong 30 ngÃ y
+    </div>
+
+    <!-- Header -->
     <header class="site-header">
-      <a class="brand" href="index.html">Clothique</a>
+      <div class="brand-wrapper">
+        <a class="brand" href="index.html">Clothique</a>
+      </div>
+
       <nav class="main-nav">
-        <a href="products.html">Sản phẩm</a>
-        <a href="cart.html">Giỏ hàng (<span data-cart-count>0</span>)</a>
-        <a href="login.html">Đăng nhập</a>
+        <a class="nav-link" href="index.html">Trang chá»§</a>
+        <a class="nav-link" href="products.html">Sáº£n pháº©m</a>
+        <a class="nav-link" href="products.html?category=ao">Ão</a>
+        <a class="nav-link" href="products.html?category=quan">Quáº§n</a>
+        <a class="nav-link" href="products.html?category=vay">VÃ¡y</a>
+        <a class="nav-link" href="products.html?category=phu-kien">Phá»¥ kiá»‡n</a>
       </nav>
+
+      <div class="header-actions">
+        <a class="header-icon-btn" href="profile.html" title="TÃ i khoáº£n">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </a>
+
+        <a class="header-icon-btn" href="cart.html" title="Giá» hÃ ng">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-badge" data-cart-count>0</span>
+        </a>
+      </div>
     </header>
 
-    <main class="section narrow">
-      <h1>Giỏ hàng</h1>
-      <div id="cart-items" class="stack"></div>
-      <div class="summary-row">
-        <strong>Tổng cộng</strong>
-        <strong id="cart-total">0đ</strong>
+    <main class="section">
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Trang chá»§</a>
+        <span>/</span>
+        <span>Giá» hÃ ng</span>
+      </nav>
+
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <h1 style="font-family: var(--font-serif); font-size: 2.2rem; font-weight: 600;">Giá» hÃ ng cá»§a báº¡n</h1>
+          <p class="section-subtitle">Kiá»ƒm tra cÃ¡c sáº£n pháº©m Ä‘Ã£ chá»n trÆ°á»›c khi tiáº¿n hÃ nh thanh toÃ¡n</p>
+        </div>
       </div>
-      <a class="btn primary full" href="checkout.html">Thanh toán</a>
+
+      <!-- Main Cart Layout -->
+      <div class="cart-layout" id="cart-layout-container">
+        <!-- Left Column: Items List -->
+        <div>
+          <!-- Free shipping bar -->
+          <div class="free-shipping-bar" id="shipping-progress-box">
+            <div id="shipping-progress-text" style="font-weight: 600;">Mua thÃªm Ä‘á»ƒ nháº­n Æ°u Ä‘Ã£i giao hÃ ng miá»…n phÃ­</div>
+            <div class="progress-track">
+              <div class="progress-fill" id="shipping-progress-fill" style="width: 0%;"></div>
+            </div>
+          </div>
+
+          <div class="cart-items-wrapper">
+            <div id="cart-items"></div>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+            <a class="btn secondary" href="products.html">â† Tiáº¿p tá»¥c mua sáº¯m</a>
+            <button class="btn" id="btn-clear-cart" type="button" style="color: var(--muted);">XÃ³a toÃ n bá»™</button>
+          </div>
+        </div>
+
+        <!-- Right Column: Summary Card -->
+        <div>
+          <div class="summary-card">
+            <h3>TÃ³m táº¯t Ä‘Æ¡n hÃ ng</h3>
+
+            <div class="summary-line">
+              <span>Táº¡m tÃ­nh</span>
+              <strong id="cart-subtotal">0Ä‘</strong>
+            </div>
+
+            <div class="summary-line">
+              <span>PhÃ­ váº­n chuyá»ƒn</span>
+              <span id="cart-shipping">30.000Ä‘</span>
+            </div>
+
+            <div class="summary-line" id="discount-row" style="display: none; color: var(--accent-dark);">
+              <span>MÃ£ giáº£m giÃ¡ (CLOTHIQUE10)</span>
+              <strong id="cart-discount">-0Ä‘</strong>
+            </div>
+
+            <div class="promo-form">
+              <input type="text" id="promo-code-input" placeholder="MÃ£ giáº£m giÃ¡ (Thá»­: CLOTHIQUE10)" />
+              <button class="btn" id="btn-apply-promo" type="button">Ãp dá»¥ng</button>
+            </div>
+
+            <div class="summary-line total-line">
+              <span>Tá»•ng thanh toÃ¡n</span>
+              <strong id="cart-total" style="font-size: 22px; color: var(--ink);">0Ä‘</strong>
+            </div>
+
+            <a class="btn primary full lg" id="btn-checkout" href="checkout.html" style="margin-top: 20px;">
+              Tiáº¿n hÃ nh Ä‘áº·t hÃ ng
+            </a>
+
+            <div style="margin-top: 20px; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 13px; color: var(--muted);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+              <span>Thanh toÃ¡n báº£o máº­t 256-bit SSL</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
 
+    <!-- Footer -->
     <footer class="site-footer">
-      <p>© 2026 Clothique.</p>
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h3>Clothique</h3>
+          <p>ThÆ°Æ¡ng hiá»‡u thá»i trang tá»‘i giáº£n Ä‘Æ°Æ¡ng Ä‘áº¡i, tÃ´n vinh phong cÃ¡ch sá»‘ng tinh táº¿ vá»›i cháº¥t liá»‡u tá»± nhiÃªn vÃ  Ä‘Æ°á»ng may sáº¯c nÃ©t.</p>
+        </div>
+
+        <div class="footer-column">
+          <h4>Danh má»¥c</h4>
+          <ul class="footer-links">
+            <li><a href="products.html?category=ao">Ão sÆ¡ mi & Blazer</a></li>
+            <li><a href="products.html?category=quan">Quáº§n Ã¢u & Shorts</a></li>
+            <li><a href="products.html?category=vay">VÃ¡y Ä‘áº§m thiáº¿t káº¿</a></li>
+            <li><a href="products.html?category=phu-kien">TÃºi da & Phá»¥ kiá»‡n</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>ChÄƒm sÃ³c khÃ¡ch hÃ ng</h4>
+          <ul class="footer-links">
+            <li><a href="profile.html">Kiá»ƒm tra Ä‘Æ¡n hÃ ng</a></li>
+            <li><a href="#">ChÃ­nh sÃ¡ch Ä‘á»•i tráº£ 30 ngÃ y</a></li>
+            <li><a href="#">HÆ°á»›ng dáº«n chá»n kÃ­ch cá»¡</a></li>
+            <li><a href="admin/dashboard.html">Khu vá»±c quáº£n trá»‹ (Admin)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>LiÃªn há»‡</h4>
+          <ul class="footer-links">
+            <li><span>Hotline: 1900 888 999</span></li>
+            <li><span>Email: support@clothique.vn</span></li>
+            <li><span>Äá»‹a chá»‰: 128 Nguyá»…n Huá»‡, Quáº­n 1, TP. HCM</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>Â© 2026 Clothique. ÄÃ£ Ä‘Äƒng kÃ½ báº£n quyá»n thÆ°Æ¡ng hiá»‡u.</p>
+        <div>
+          <span>Cam káº¿t sáº£n pháº©m chÃ­nh hÃ£ng 100%</span>
+        </div>
+      </div>
     </footer>
 
     <script src="assets/js/data.js"></script>
