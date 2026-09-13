@@ -234,7 +234,6 @@
         if (btnApprove && badgeOrder) {
           btnApprove.addEventListener("click", () => {
             badgeOrder.textContent = "Đã duyệt";
-            badgeOrder.className = "badge badge-success";
             btnApprove.textContent = "Đã chuyển kho";
             btnApprove.className = "btn";
             btnApprove.disabled = true;
@@ -242,5 +241,6 @@
         }
       });
     </script>
+    <script src="../assets/js/water-ripple.js"></script>
   </body>
 </html>
