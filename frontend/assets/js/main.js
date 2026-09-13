@@ -1,11 +1,11 @@
-﻿const featuredContainer = document.querySelector("#featured-products");
+const featuredContainer = document.querySelector("#featured-products");
 
 function createProductCardHTML(product) {
   const discountPercent = product.originalPrice
     ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)
     : 0;
 
-  const tagClass = product.tag === "BÃ¡n cháº¡y" || product.tag === "Hot deal" ? "tag-hot" : "tag-new";
+  const tagClass = product.tag === "Bán chạy" || product.tag === "Hot deal" ? "tag-hot" : "tag-new";
 
   const colorsHTML = product.colors && product.colors.length
     ? `<div class="color-dots">${product.colors.map(c => `<span class="color-dot" style="background-color: ${c}"></span>`).join("")}</div>`
@@ -14,7 +14,7 @@ function createProductCardHTML(product) {
   return `
     <article class="product-card" data-reveal>
       <div class="product-thumb-wrap">
-        <span class="product-tag ${tagClass}">${product.tag || "Má»›i"}</span>
+        <span class="product-tag ${tagClass}">${product.tag || "Mới"}</span>
         <a href="product-detail.html?id=${product.id}">
           <img src="${product.image}" alt="${product.name}" loading="lazy" />
         </a>
@@ -26,25 +26,25 @@ function createProductCardHTML(product) {
             </svg>
             Xem nhanh
           </button>
-          <button class="card-action-btn quick-add" type="button" data-quick-add="${product.id}" title="ThÃªm vÃ o giá»">
+          <button class="card-action-btn quick-add" type="button" data-quick-add="${product.id}" title="Thêm vào giỏ">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
               <line x1="3" y1="6" x2="21" y2="6"></line>
               <path d="M16 10a4 4 0 0 1-8 0"></path>
             </svg>
-            + Giá» hÃ ng
+            + Giỏ hàng
           </button>
         </div>
       </div>
 
       <div class="product-content">
-        <span class="product-category">${product.categoryName || "Thá»i trang"}</span>
+        <span class="product-category">${product.categoryName || "Thời trang"}</span>
         <a href="product-detail.html?id=${product.id}">
           <h3 class="product-title">${product.name}</h3>
         </a>
 
         <div class="product-rating">
-          <span class="stars">â˜…â˜…â˜…â˜…â˜…</span>
+          <span class="stars">★★★★★</span>
           <span>${product.rating || "5.0"} (${product.reviewsCount || 40})</span>
         </div>
 
@@ -105,16 +105,16 @@ function openQuickViewModal(productId) {
 
   modalBackdrop.innerHTML = `
     <div class="quick-view-modal">
-      <button class="modal-close-btn" type="button" aria-label="ÄÃ³ng">&times;</button>
+      <button class="modal-close-btn" type="button" aria-label="Đóng">&times;</button>
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: center;">
         <div style="border-radius: var(--radius-md); overflow: hidden; height: 380px; background: var(--line-light);">
           <img src="${product.image}" alt="${product.name}" style="width: 100%; height: 100%; object-fit: cover;" />
         </div>
         <div>
-          <span class="badge badge-success" style="margin-bottom: 8px;">${product.tag || "Má»›i vá»"}</span>
+          <span class="badge badge-success" style="margin-bottom: 8px;">${product.tag || "Mới về"}</span>
           <p style="font-size: 13px; color: var(--muted); text-transform: uppercase; font-weight: 600; margin-bottom: 4px;">${product.categoryName || "Clothique"}</p>
           <h2 style="font-size: 22px; font-weight: 700; margin-bottom: 12px; line-height: 1.3;">${product.name}</h2>
-
+          
           <div style="display: flex; align-items: baseline; gap: 12px; margin-bottom: 14px;">
             <span style="font-size: 24px; font-weight: 800; color: var(--ink);">${formatPrice(product.price)}</span>
             ${product.originalPrice ? `<span style="font-size: 15px; color: var(--muted-light); text-decoration: line-through;">${formatPrice(product.originalPrice)}</span>` : ""}
@@ -124,7 +124,7 @@ function openQuickViewModal(productId) {
           <p style="font-size: 14px; color: var(--muted); line-height: 1.6; margin-bottom: 18px;">${product.description}</p>
 
           <div style="margin-bottom: 20px;">
-            <label style="display: block; font-size: 13px; font-weight: 700; margin-bottom: 8px;">Chá»n kÃ­ch cá»¡:</label>
+            <label style="display: block; font-size: 13px; font-weight: 700; margin-bottom: 8px;">Chọn kích cỡ:</label>
             <div style="display: flex; gap: 8px;" id="modal-size-select">
               <button type="button" class="size-pill" data-modal-size="S">S</button>
               <button type="button" class="size-pill active" data-modal-size="M">M</button>
@@ -135,10 +135,10 @@ function openQuickViewModal(productId) {
 
           <div style="display: flex; gap: 12px;">
             <button class="btn primary" id="modal-add-btn" style="flex: 1; min-height: 44px; font-size: 14px;" type="button">
-              ThÃªm vÃ o giá» hÃ ng
+              Thêm vào giỏ hàng
             </button>
             <a href="product-detail.html?id=${product.id}" class="btn secondary" style="min-height: 44px; font-size: 14px;">
-              Xem chi tiáº¿t â†—
+              Xem chi tiết ↗
             </a>
           </div>
         </div>
@@ -210,7 +210,7 @@ function initBackToTop() {
   if (!btn) {
     btn = document.createElement("button");
     btn.className = "back-to-top";
-    btn.setAttribute("aria-label", "LÃªn Ä‘áº§u trang");
+    btn.setAttribute("aria-label", "Lên đầu trang");
     btn.innerHTML = `
       <svg class="progress-ring" viewBox="0 0 48 48">
         <circle cx="24" cy="24" r="22" />
