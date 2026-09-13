@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thanh toán | Clothique</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html">Clothique</a>
+      <nav class="main-nav">
+        <a href="products.html">Sản phẩm</a>
+        <a href="cart.html">Giỏ hàng (<span data-cart-count>0</span>)</a>
+        <a href="login.html">Đăng nhập</a>
+      </nav>
+    </header>
+
+    <main class="section narrow">
+      <h1>Thông tin thanh toán</h1>
+      <form class="form" id="checkout-form">
+        <label>Họ tên <input type="text" name="name" required /></label>
+        <label>Số điện thoại <input type="tel" name="phone" required /></label>
+        <label>Địa chỉ nhận hàng <textarea name="address" rows="4" required></textarea></label>
+        <label>Phương thức thanh toán
+          <select name="payment_method">
+            <option value="cod">Thanh toán khi nhận hàng</option>
+            <option value="bank">Chuyển khoản ngân hàng</option>
+          </select>
+        </label>
+        <button class="btn primary full" type="submit">Đặt hàng</button>
+      </form>
+      <p id="order-notice" class="notice" aria-live="polite"></p>
+    </main>
+
+    <footer class="site-footer">
+      <p>© 2026 Clothique.</p>
+    </footer>
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/cart-store.js"></script>
+    <script src="assets/js/checkout.js"></script>
+  </body>
+</html>
