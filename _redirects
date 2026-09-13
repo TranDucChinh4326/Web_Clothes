@@ -1,0 +1,7 @@
+/ /frontend/index.html 200
+/products /frontend/products.html 200
+/cart /frontend/cart.html 200
+/checkout /frontend/checkout.html 200
+/login /frontend/login.html 200
+/register /frontend/register.html 200
+/profile /frontend/profile.html 200
